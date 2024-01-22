@@ -70,3 +70,8 @@ header {
   border: 1px solid #ccc;
   border-top: none;
 }
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}

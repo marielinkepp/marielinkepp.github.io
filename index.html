@@ -16,7 +16,7 @@
     <main>
         <h1>Loodusvaatluste andmebaasi kirjete analüüs</h1>
 
-        <div id="section1">
+        <div id="section1" class="section">
             <button type="button" class="collapsible"><h2>1. Uurimisküsimus</h2></button>
             <div class="content">
                 
@@ -40,11 +40,10 @@
             </div>
         </div>
         
-        <div id="section2">
+        <div id="section2" class="section">
             <button type="button" class="collapsible"><h2>2. Lähteandmed</h2></button>
             <div class="content">
                 
-
                 <p>Töös on kasutatud kolme põhiandmestikku.</p>
                 <ol>
                     <li><a href="https://lva.keskkonnainfo.ee">Loodusvaatluste andmebaasi</a> kõik sisestatud kirjed. Fail on .csv-formaadis.</li>
@@ -93,7 +92,7 @@
             </div>
         </div>
 
-        <div id="section3">
+        <div id="section3" class="section">
             <button type="button" class="collapsible"><h2>3. Andmetöötlusprotsess</h2></button>
             <div class="content">
 
@@ -382,20 +381,92 @@
         </div>
         
         
-        <div id="section4">
+        <div id="section4" class="section">
             <button type="button" class="collapsible"><h2>4. Tulemused</h2></button>
             <div id="section4" class="content">
+
+                <button type="button" class="collapsible"><h3>Baaskaart</h3></button>
+                    <div id="section4-0" class="content">
+                        <iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 
-                <!--<iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe>-->
+                <button type="button" class="collapsible"><h3>4.1 Loodusvaatluste erinevused aastate lõikes</h3></button>
+                    <div id="section4-1" class="content grid-container">
+                        <div class="tab-grid"></div>
+                        <div class="map-grid"><iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe></div>
+                    </div>
+
+                <button type="button" class="collapsible"><h3>4.2 Loodusvaatluste erinevused periooditi</h3></button>
+                    <div id="section4-2" class="content">
+
+                        <div class="tab-grid">
+                            <div class="tab">
+                                <button class="tablinks" onclick="openTab(event, 'Tab6')"><h4>Kuu päevad</h4></button>
+                                <button class="tablinks" onclick="openTab(event, 'Tab7')"><h4>Nädalapäevad</h4></button>
+                                <button class="tablinks" onclick="openTab(event, 'Tab8')"><h4>Pühad</h4></button>
+                                <button class="tablinks" onclick="openTab(event, 'Tab9')"><h4>Kuud</h4></button>
+                            </div>
+                            
+                            <div id="Tab6" class="tabcontent">
+                            </div>
+
+                            <div id="Tab7" class="tabcontent">
+                            </div>
+
+                            <div id="Tab8" class="tabcontent">
+                            </div>
+
+                            <div id="Tab9" class="tabcontent">
+                            </div>
+                        </div>
+                        <div class="map-grid"><iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe></div>
+
+                    </div>
+
+                <button type="button" class="collapsible"><h3>4.3 Loodusvaatluste erinevused maakonniti</h3></button>
+                    <div id="section4-3" class="content">
+
+                        <div class="tab-grid">
+                            <div class="tab">
+                                <button class="tablinks" onclick="openTab(event, 'Tab10')"><h4>Üldine</h4></button>
+                                <button class="tablinks" onclick="openTab(event, 'Tab11')"><h4>Aastate lõikes</h4></button>
+                            </div>
+                            
+                            <div id="Tab10" class="tabcontent">
+                            </div>
+
+                            <div id="Tab11" class="tabcontent">
+                            </div>
+                        </div>
+                        <div class="map-grid"><iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe></div>
+
+                    </div>
+
+                <button type="button" class="collapsible"><h3>4.4 Liikide erinevused maakonniti</h3></button>
+                    <div id="section4-4" class="content">
+                        
+                        <div class="tab-grid">
+                            <div class="tab">
+                                <button class="tablinks" onclick="openTab(event, 'Tab12')"><h4>Üldine</h4></button>
+                                <button class="tablinks" onclick="openTab(event, 'Tab13')"><h4>Maakondlik</h4></button>
+                            </div>
+                            <div id="Tab12" class="tabcontent">
+                            </div>
+                            <div id="Tab13" class="tabcontent">
+                            </div>
+                        </div>
+                        <div class="map-grid"><iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe></div>
+                    </div>
+    
             </div>
         </div>
 
-        <div id="section5">
+        <div id="section5" class="section">
             <button type="button" class="collapsible"><h2>5. Kokkuvõte</h2></button>
             <div id="section5" class="content"></div>
         </div>
 
-        <div id="section6"></div>
+        <div id="section6" class="section"></div>
 
         
     </main>

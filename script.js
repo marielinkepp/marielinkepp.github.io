@@ -54,6 +54,19 @@ function loadTableFromCSV(container, csvUrl) {
   });
 }
 
+function handleSectionToggle() {
+  $(".collapsible").click(function() {
+      var content = $(this).next('.content');
+      if (content.is(':visible')) {
+          content.hide();
+          $('.section .content').show();
+      } else {
+          $('.section .content').hide();
+          content.show();
+      }
+  });
+}
+
 $(document).ready(function() {
   $('.tableContainer').each(function() {
       var container = $(this);
@@ -61,6 +74,8 @@ $(document).ready(function() {
       loadTableFromCSV(container, csvUrl);
   });
 });
+
+$(document).ready(handleSectionToggle);
 
 window.onload = Collapse;
 
