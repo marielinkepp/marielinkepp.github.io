@@ -75,7 +75,7 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(handleSectionToggle);
+// $(document).ready(handleSectionToggle);
 
 window.onload = Collapse;
 
