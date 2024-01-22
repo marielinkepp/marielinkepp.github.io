@@ -29,6 +29,39 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
+function loadTableFromCSV(container, csvUrl) {
+  $.ajax({
+      url: csvUrl,
+      dataType: "text",
+      success: function(data) {
+          var csvData = data.split(/\r?\n|\r/);
+          var table = '<table>';
+          for (var count = 0; count < csvData.length; count++) {
+              var cellData = csvData[count].split(",");
+              table += '<tr>';
+              for (var cellCount = 0; cellCount < cellData.length; cellCount++) {
+                  if (count === 0) {
+                      table += '<th>' + cellData[cellCount] + '</th>';
+                  } else {
+                      table += '<td>' + cellData[cellCount] + '</td>';
+                  }
+              }
+              table += '</tr>';
+          }
+          table += '</table>';
+          container.html(table);
+      }
+  });
+}
+
+$(document).ready(function() {
+  $('.tableContainer').each(function() {
+      var container = $(this);
+      var csvUrl = container.data('csv-url');
+      loadTableFromCSV(container, csvUrl);
+  });
+});
+
 window.onload = Collapse;
 
 // Get the element with id="defaultOpen" and click on it
