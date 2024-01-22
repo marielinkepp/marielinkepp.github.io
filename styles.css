@@ -1,6 +1,13 @@
+header {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px; /* Padding around the content */
+  text-align: center; /* Center the text */
+  font-size: 1.5em; /* Make the text larger */
+}
+
 .collapsible {
-    background-color: #777;
-    color: white;
+    background-color: white;
+    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
