@@ -58,8 +58,9 @@ footer {
   /* The image used */
   background-image: url("media/pawel-czerwinski-hw6Dh3R7yxA-unsplash.jpg");
 
-  /* Set a specific height */
-  min-height: 500px; 
+  /* Set a specific height and width */
+  min-height: 100vh; 
+  width: 100%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;

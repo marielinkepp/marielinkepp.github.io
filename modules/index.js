@@ -1,4 +1,3 @@
-import {Collapse} from "./common.js";
 import {handleNavMenuDropdownClick, handleLinkClick, handleCollapsibleClick} from "./eventhandlers.js";
 
 var nav; // Define nav variable in the global scope
@@ -17,5 +16,3 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var collapsibles = document.querySelectorAll('.collapsible');
     handleCollapsibleClick(collapsibles);
 });
-
-window.onload = Collapse;

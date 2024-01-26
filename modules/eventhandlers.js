@@ -27,9 +27,14 @@ export function handleLinkClick(nav, links) {
 
 export function handleCollapsibleClick(collapsibles) {
     collapsibles.forEach(collapsible => {
+        // Get the content of the collapsible
+        var content = collapsible.nextElementSibling;
+
+        // Set the content to be hidden by default
+        content.style.display = "none";
+
         collapsible.addEventListener('click', function() {
             this.classList.toggle('active');
-            var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
             } else {
