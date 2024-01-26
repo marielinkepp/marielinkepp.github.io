@@ -13,9 +13,8 @@ export function handleLinkClick(nav, links) {
         link.addEventListener('click', function(event) {
             var href = this.getAttribute('href'); // Get the href of the link
 
-            // If the href is '#', this is likely a button that doesn't navigate to a different page
-            // In this case, don't prevent the default action and don't fetch any content
-            if (href === '#') {
+            // If the href is '#' or the link is a Swiper button, don't prevent the default action and don't fetch any content
+            if (href === '#' || this.classList.contains('swiper-button-next') || this.classList.contains('swiper-button-prev')) {
                 return;
             }
 
