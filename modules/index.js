@@ -2,8 +2,8 @@ import {handleNavMenuDropdownClick, handleLinkClick, handleCollapsibleClick} fro
 
 var nav; // Define nav variable in the global scope
 
-function initSwiper() {
-    var swiper = new Swiper('.swiper-container', {
+export function initSwiper() {
+    return new Swiper('.swiper-container', {
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Add event listeners to links
     var links = document.querySelectorAll('nav a');
-    handleLinkClick(nav, links, swiper);
+    handleLinkClick(nav, links);
 
     // Select all elements with the class 'collapsible'
     var collapsibles = document.querySelectorAll('.collapsible');

@@ -1,3 +1,5 @@
+import { initSwiper } from './index.js';
+
 export function handleNavMenuDropdownClick(nav, navMenuDropdown) {
     navMenuDropdown.addEventListener("click", function() {
         if (nav.style.display === "none") {
@@ -8,7 +10,7 @@ export function handleNavMenuDropdownClick(nav, navMenuDropdown) {
     });
 }
 
-export function handleLinkClick(nav, links, initSwiper) {
+export function handleLinkClick(nav, links) {
     links.forEach(link => {
         link.addEventListener('click', function(event) {
             var href = this.getAttribute('href'); // Get the href of the link
