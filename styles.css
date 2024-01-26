@@ -197,3 +197,12 @@ footer {
   border-top: none;
 }
 
+/* Text slide-in animation */
+@keyframes slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+.slide-in-text {
+  animation: slide 2s ease-out;
+}

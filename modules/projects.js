@@ -6,6 +6,11 @@ var nav; // Define nav variable in the global scope
 
 function initSwiper() {
     return new Swiper('.swiper-container', {
+        // Fade effect
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
         // Optional parameters
         direction: 'horizontal',
         loop: true,
