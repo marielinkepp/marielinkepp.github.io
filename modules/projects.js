@@ -1,7 +1,6 @@
 import {handleNavMenuDropdownClick, handleCollapsibleClick} from "./eventhandlers.js";
 
-//import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
-import Swiper from 'swiper';
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
 var nav; // Define nav variable in the global scope
 
