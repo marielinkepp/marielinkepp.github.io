@@ -1,5 +1,3 @@
-import { initSwiper } from './index.js';
-
 export function handleNavMenuDropdownClick(nav, navMenuDropdown) {
     navMenuDropdown.addEventListener("click", function() {
         if (nav.style.display === "none") {
@@ -36,7 +34,7 @@ export function handleLinkClick(nav, links) {
                     // Add an entry to the history stack and change the URL
                     history.pushState({ href: href }, '', href);
 
-                    initSwiper();
+                    //initSwiper();
                 });
         });
     });
