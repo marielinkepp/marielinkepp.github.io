@@ -11,14 +11,15 @@ export function handleNavMenuDropdownClick(nav, navMenuDropdown) {
 export function handleLinkClick(nav, links) {
     links.forEach(link => {
         link.addEventListener('click', function(event) {
+            var href = this.getAttribute('href'); // Get the href of the link
 
             // If the href is '#', this is likely a button that doesn't navigate to a different page
             // In this case, don't prevent the default action and don't fetch any content
             if (href === '#') {
                 return;
             }
+
             event.preventDefault(); // Prevent the default action
-            var href = this.getAttribute('href'); // Get the href of the link
 
             // Load the template
             fetch(href)
@@ -26,6 +27,9 @@ export function handleLinkClick(nav, links) {
                 .then(data => {
                     document.getElementById('main').innerHTML = data;
                     nav.style.display = "none"; // Close the navigation menu
+
+                    // Add an entry to the history stack and change the URL
+                    history.pushState({ href: href }, '', href);
                 });
         });
     });

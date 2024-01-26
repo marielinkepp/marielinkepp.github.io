@@ -27,3 +27,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var collapsibles = document.querySelectorAll('.collapsible');
     handleCollapsibleClick(collapsibles);
 });
+
+window.addEventListener('popstate', function(event) {
+    if (event.state) {
+        fetch(event.state.href)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('main').innerHTML = data;
+            });
+    }
+});
