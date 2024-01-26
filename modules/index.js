@@ -11,7 +11,7 @@ function selectContent() {
     console.log(pageId);
     console.log(itemId);
 
-    applyTemplate(pageId);
+    //applyTemplate(pageId);
     navigateTo('?page=' + pageId);
 
 }
