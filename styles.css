@@ -1,8 +1,8 @@
 header {
   background-color: #f8f9fa; /* Light gray background */
-  padding: 20px; /* Padding around the content */
+  padding: 10px; /* Padding around the content */
   text-align: center; /* Center the text */
-  font-size: 1.5em; /* Make the text larger */
+  /*font-size: 1.5em; /* Make the text larger */
   position:sticky; 
   top:0;
 }
@@ -11,13 +11,33 @@ header {
   margin: 0;
   font-size: 1.5em;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 }
 
 #nav_links {
   text-transform: uppercase;
-  display: inline-block;
+  /*display: inline-block;*/
+  display: none; /* Hide the nav element initially */
 }
+
+.parallax {
+  /* The image used */
+  background-image: url("pawel-czerwinski-hw6Dh3R7yxA-unsplash.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section {
+  padding: 20px;
+}
+
 .content {
   padding: 20px;
   background-color: #f8f9fa;
@@ -60,7 +80,7 @@ header {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    /*font-size: 15px;*/
     margin-bottom: 10px; /* Adjust as needed */
   }
   
@@ -70,7 +90,7 @@ header {
   
   .collapsible::before {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
+    /*font-size: 13px;*/
     color: white;
     float: right;
     margin-left: 5px;
@@ -96,7 +116,7 @@ header {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 17px;
+  /*font-size: 17px;*/
 }
 
 /* Change background color of buttons on hover */

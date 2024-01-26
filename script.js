@@ -2,6 +2,15 @@ function loadTemplate(pageName) {
   $('main').load(pageName + '.html');
 }
 
+function toggleNav() {
+  var nav = document.getElementById("nav_links");
+  if (nav.style.display === "none") {
+      nav.style.display = "block";
+  } else {
+      nav.style.display = "none";
+  }
+}
+
 function Collapse() {
   var coll = document.getElementsByClassName("collapsible");
   var i;
@@ -82,8 +91,10 @@ $(document).ready(function() {
       // Get the name of the page from the href attribute
       var page = $(this).attr('href').split('.')[0];
 
-      // Load the content of the page
-      loadTemplate(page);
+      // If the clicked link is not the index page, load the content of the page
+      if (page !== 'index') {
+          loadTemplate(page);
+      }
   });
 });
 
