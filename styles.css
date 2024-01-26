@@ -66,6 +66,10 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  /* Control parallax speed */
+  background-position: 50% 0;
+  transition: background-position 0.5s ease-in-out;
 }
 
 .section {

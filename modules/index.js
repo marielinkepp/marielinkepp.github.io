@@ -1,33 +1,21 @@
 import {Collapse} from "./common.js";
+import {handleNavMenuDropdownClick, handleLinkClick, handleCollapsibleClick} from "./eventhandlers.js";
+
+var nav; // Define nav variable in the global scope
 
 window.addEventListener('DOMContentLoaded', (event) => {
     var navMenuDropdown = document.getElementById("nav-menu-dropdown");
     var nav = document.getElementById("nav-links");
 
-    navMenuDropdown.addEventListener("click", function() {
-        if (nav.style.display === "none") {
-            nav.style.display = "block";
-        } else {
-            nav.style.display = "none";
-        }
-    });
+    handleNavMenuDropdownClick(nav, navMenuDropdown);
 
     // Add event listeners to links
     var links = document.querySelectorAll('nav a');
-    links.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default action
-            var href = this.getAttribute('href'); // Get the href of the link
+    handleLinkClick(nav, links);
 
-            // Load the template
-            fetch(href)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('main').innerHTML = data;
-                    nav.style.display = "none"; // Close the navigation menu
-                });
-        });
-    });
+    // Select all elements with the class 'collapsible'
+    var collapsibles = document.querySelectorAll('.collapsible');
+    handleCollapsibleClick(collapsibles);
 });
 
 window.onload = Collapse;

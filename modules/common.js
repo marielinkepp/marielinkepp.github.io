@@ -10,7 +10,7 @@ function loadTemplate(pageName) {
   $('main').load(pageName + '.html');
 }
 
-function Collapse() {
+export function Collapse() {
   var coll = document.getElementsByClassName("collapsible");
   var i;
 
