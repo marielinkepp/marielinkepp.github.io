@@ -1,3 +1,7 @@
+function loadTemplate(pageName) {
+  $('main').load(pageName + '.html');
+}
+
 function Collapse() {
   var coll = document.getElementsByClassName("collapsible");
   var i;
@@ -67,6 +71,21 @@ function handleSectionToggle() {
   });
 }
 
+$(document).ready(function() {
+  // Load the home page content by default
+  loadTemplate('index');
+
+  // Add click event listeners to the navigation links
+  $('nav a').click(function(e) {
+      e.preventDefault(); // Prevent the default action (navigating to the link)
+
+      // Get the name of the page from the href attribute
+      var page = $(this).attr('href').split('.')[0];
+
+      // Load the content of the page
+      loadTemplate(page);
+  });
+});
 
 //$(document).ready(handleSectionToggle);
 

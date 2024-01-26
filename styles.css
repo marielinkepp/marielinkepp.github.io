@@ -14,11 +14,15 @@ header {
   text-align: left;
 }
 
+#nav_links {
+  text-transform: uppercase;
+  display: inline-block;
+}
 .content {
   padding: 20px;
   background-color: #f8f9fa;
   margin: 0;
-  font-size: 1.5em;
+  /*font-size: 1em;*/
   font-weight: bold;
   text-align: center;
 }
@@ -29,6 +33,10 @@ header {
 
 #content-2 {
   background-color: thistle;
+}
+
+#section-1 {
+  text-align: left;
 }
 
 #section-3 {
