@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     var navMenuDropdown = document.getElementById("nav-menu-dropdown");
+    console.log(navMenuDropdown);
     navMenuDropdown.addEventListener("click", function() {
         var nav = document.getElementById("nav-links");
         if (nav.style.display === "none") {
