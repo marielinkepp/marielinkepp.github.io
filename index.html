@@ -10,17 +10,27 @@
 </head>
 <body>
     <header>
-        <h1>Marielin Kepp</h1>
+        <h1 id="header_h1">Marielin Kepp</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Avaleht</a></li>
+                <li><a href="projektid.html">Projektid</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <i class="fa-solid fa-magnifying-glass"></i>
     </header>
 
     <main>
         <h1>Loodusvaatluste andmebaasi kirjete analüüs</h1>
-
         <div id="section1" class="section">
-            <button type="button" class="collapsible"><h2>1. Uurimisküsimus</h2></button>
+            <!--<button type="button" class="collapsible"><h2>1. Uurimisküsimus</h2></button>-->
             <div class="tab-grid">
-                <div class="content">
-                    <p>Käesoleva töö eesmärgiks oli uurida muutusi loodusvaatluste sisestamises vahemikus 2000-2023. Püstitatud on järgmised algsed hüpoteesid:</p>
+                <div id="content-1" class="content">
+                    <h2>1. Uurimisküsimus</h2>
+                    <p>Käesoleva töö eesmärgiks oli uurida muutusi loodusvaatluste sisestamises vahemikus 2000-2023.</p>
+                    <p>Püstitatud on järgmised algsed hüpoteesid:</p>
                     <ul>
                         <li>H1: Loodusvaatluste sisestamine on aastate vältel järjest suurenenud</li>
                         <li>H2: Vaatlusi sisestatakse kindlatel aegadel (aastaaeg/kuu/nädalapäev) rohkem</li>
@@ -38,13 +48,49 @@
 
                     <p>Töö sisu ja ülesandepüstitus lähtuvad isiklikust huvist. Tegemist ei ole tööalase projektiga.</p>
                 </div>
-                <div class="content">
+                <div id="content-2" class="content">
+                    <h2>2. Lähteandmed</h2>
                 
                     <p>Töös on kasutatud kolme põhiandmestikku.</p>
                     <ol>
                         <li><a href="https://lva.keskkonnainfo.ee">Loodusvaatluste andmebaasi</a> kõik sisestatud kirjed. Fail on .csv-formaadis.</li>
+
+                        <li><p>Tabelites on järgmised veerud:</p>
+                            <ul>
+                                <li><strong>Alg kp</strong>: kujul <em>pp.kk.aaaa</em></li>
+                                <li><strong>Liik</strong>: kujul <em>ladinakeelne nimi (eestikeelne nimi)</em></li>
+                                <li><strong>Arv</strong>: täisarv või tühi kirje</li>
+                                <li><strong>Vaatluskoht</strong>: kujul <em>maakond, omavalitsus, asustusüksus</em></li>
+                                <li><strong>Staatus</strong>: kujul <em>kinnitatud/kinnitamata</em></li>
+                            </ul>
+                        </li>
+
                         <li><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html">Maakondade ruumiinfo</a> .shp-formaadis, koordinaatide referentssüsteem EPSG:3301</li>
                         <li><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html">Asustusjaotuse ruumiinfo</a> .shp-formaadis, koordinaatide referentssüsteem EPSG:3301</li>
+
+                        <li>
+                            <p>Tabelites on järgmised veerud:</p>
+                            <ul>
+                                <li><strong>ANIMI</strong>: asustusüksuse nimi</li>
+                                <li><strong>AKOOD</strong>: asustusüksuse kood (EHAK)</li>
+                                <li><strong>TYYP</strong>: asustusüksuse tüüp (EHAK)
+                                <ul>
+                                    <li>0 - maakond</li>
+                                    <li>1 - vald</li>
+                                    <li>3 - alev</li>
+                                    <li>4 - linn</li>
+                                    <li>5 - omavalitsuse sisene linn</li>
+                                    <li>6 - linnaosa</li>
+                                    <li>7 - alevik</li>
+                                    <li>8 - küla</li>
+                                </ul>
+                                </li>
+                                <li><strong>ONIMI</strong>: omavalitsuse nimi</li>
+                                <li><strong>OKOOD</strong>: omavalitsuse kood (EHAK)</li>
+                                <li><strong>MNIMI</strong>: maakonna nimi</li>
+                                <li><strong>MKOOD</strong>: maakonna kood (EHAK)</li>
+                            </ul>
+                        </li>
                     </ol>
                     
                     <p><strong>EPSG:3301</strong> – Estonian Coordinate System of 1997</p>
@@ -54,42 +100,11 @@
                         <li>Ellipsoid: GRS 1980</li>
                         <li>Prime Meridian: Greenwich</li>
                     </ul>
-    
-                    <p>Tabelites on järgmised veerud:</p>
-                    <ul>
-                        <li><strong>Alg kp</strong>: kujul <em>pp.kk.aaaa</em></li>
-                        <li><strong>Liik</strong>: kujul <em>ladinakeelne nimi (eestikeelne nimi)</em></li>
-                        <li><strong>Arv</strong>: täisarv või tühi kirje</li>
-                        <li><strong>Vaatluskoht</strong>: kujul <em>maakond, omavalitsus, asustusüksus</em></li>
-                        <li><strong>Staatus</strong>: kujul <em>kinnitatud/kinnitamata</em></li>
-                    </ul>
-    
-                    <p>Tabelites on järgmised veerud:</p>
-                    <ul>
-                        <li><strong>ANIMI</strong>: asustusüksuse nimi</li>
-                        <li><strong>AKOOD</strong>: asustusüksuse kood (EHAK)</li>
-                        <li><strong>TYYP</strong>: asustusüksuse tüüp (EHAK)
-                        <ul>
-                            <li>0 - maakond</li>
-                            <li>1 - vald</li>
-                            <li>3 - alev</li>
-                            <li>4 - linn</li>
-                            <li>5 - omavalitsuse sisene linn</li>
-                            <li>6 - linnaosa</li>
-                            <li>7 - alevik</li>
-                            <li>8 - küla</li>
-                        </ul>
-                        </li>
-                        <li><strong>ONIMI</strong>: omavalitsuse nimi</li>
-                        <li><strong>OKOOD</strong>: omavalitsuse kood (EHAK)</li>
-                        <li><strong>MNIMI</strong>: maakonna nimi</li>
-                        <li><strong>MKOOD</strong>: maakonna kood (EHAK)</li>
-                    </ul>
                 </div>
             </div>
         </div>
         
-        <div id="section2" class="section">
+        <!--<div id="section2" class="section">
             <button type="button" class="collapsible"><h2>2. Lähteandmed</h2></button>
             <div class="content">
                 
@@ -139,7 +154,7 @@
                     <li><strong>MKOOD</strong>: maakonna kood (EHAK)</li>
                 </ul>
             </div>
-        </div>
+        </div>-->
 
         <div id="section3" class="section">
             <button type="button" class="collapsible"><h2>3. Andmetöötlusprotsess</h2></button>
@@ -521,5 +536,6 @@
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/ae05f791bd.js" crossorigin="anonymous"></script>
 </body>
 </html>
