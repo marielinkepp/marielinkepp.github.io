@@ -1,7 +1,10 @@
+import {Collapse} from "./common.js";
+
 window.addEventListener('DOMContentLoaded', (event) => {
     var navMenuDropdown = document.getElementById("nav-menu-dropdown");
+    var nav = document.getElementById("nav-links");
+
     navMenuDropdown.addEventListener("click", function() {
-        var nav = document.getElementById("nav-links");
         if (nav.style.display === "none") {
             nav.style.display = "block";
         } else {
@@ -26,3 +29,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 });
+
+window.onload = Collapse;

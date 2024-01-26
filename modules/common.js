@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 //$(document).ready(handleSectionToggle);
 
-window.onload = Collapse;
+
 
 // Get the element with id="defaultOpen" and click on it
 // document.getElementById("defaultOpen").click();

@@ -1,4 +1,4 @@
-div, h1, h2 {
+h1, h2 {
   padding: auto;
 }
 
@@ -26,11 +26,11 @@ footer {
   overflow: hidden; /* Add overflow:hidden to contain floated li elements */
 }
 
-#nav-links > ul > li {
+#nav-links ul li {
   float: left; /* Float the li elements to get them to appear next to each other */
 }
 
-#nav-links > ul > li > a {
+#nav-links ul li a {
   display: block; /* Make the links block elements */
   text-align: center; /* Center the text */
   padding: 14px 16px; /* Add some padding */
