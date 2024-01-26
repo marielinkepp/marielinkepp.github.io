@@ -86,6 +86,11 @@ footer {
   text-align: center;
 }
 
+.tab-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
 .grid-item {
   padding: 20px;
   text-align: left;
@@ -140,7 +145,7 @@ footer {
   }
   
   .active, .collapsible:hover {
-    background-color: #555;
+    background-color: gainsboro;
   }
   
   .collapsible::before {
@@ -192,7 +197,3 @@ footer {
   border-top: none;
 }
 
-.tab-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
