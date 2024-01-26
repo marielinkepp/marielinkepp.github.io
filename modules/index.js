@@ -45,7 +45,11 @@ window.addEventListener('popstate', function(event) {
         fetch(event.state.href)
             .then(response => response.text())
             .then(data => {
-                document.getElementById('main').innerHTML = data;
+                // Get the main element
+                const main = document.getElementById('main');
+
+                // Replace the content of the main element
+                main.innerHTML = data;
             });
     }
 });

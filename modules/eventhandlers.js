@@ -16,9 +16,9 @@ export function handleLinkClick(nav, links) {
             var href = this.getAttribute('href'); // Get the href of the link
 
             // If the href is '#' or the link is a Swiper button, don't prevent the default action and don't fetch any content
-            if (href === '#' || this.classList.contains('swiper-button-next') || this.classList.contains('swiper-button-prev')) {
+            /*if (href === '#' || this.classList.contains('swiper-button-next') || this.classList.contains('swiper-button-prev')) {
                 return;
-            }
+            }*/
 
             event.preventDefault(); // Prevent the default action
 
@@ -26,7 +26,11 @@ export function handleLinkClick(nav, links) {
             fetch(href)
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById('main').innerHTML = data;
+                    // Get the main element
+                    const main = document.getElementById('main');
+
+                    // Replace the content of the main element
+                    main.innerHTML = data;
                     nav.style.display = "none"; // Close the navigation menu
 
                     // Add an entry to the history stack and change the URL
