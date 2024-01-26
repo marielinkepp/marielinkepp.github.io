@@ -32,8 +32,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var swiper = initSwiper();
 
     // Add event listeners to links
-    var links = document.querySelectorAll('nav a');
-    handleLinkClick(nav, links);
+    //var links = document.querySelectorAll('nav a');
+    //handleLinkClick(nav, links);
 
     // Select all elements with the class 'collapsible'
     var collapsibles = document.querySelectorAll('.collapsible');
