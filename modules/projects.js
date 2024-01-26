@@ -1,4 +1,4 @@
-import {handleNavMenuDropdownClick, handleCollapsibleClick} from "./eventhandlers.js";
+import {handleNavMenuDropdownClick, handleCollapsibleClick, handleTabOpen} from "./eventhandlers.js";
 
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
@@ -37,6 +37,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Select all elements with the class 'collapsible'
     var collapsibles = document.querySelectorAll('.collapsible');
     handleCollapsibleClick(collapsibles);
+
+    var tablinks = document.querySelectorAll('.tablinks');
+    handleTabOpen(tablinks);
 });
 
 function openTab(evt, tabName) {

@@ -58,3 +58,16 @@ export function handleCollapsibleClick(collapsibles) {
         });
     });
 }
+
+export function handleTabOpen(tabLinks) {
+    tabLinks.forEach(tabLink => {
+        tabLink.addEventListener('click', function() {
+            var tabName = this.getAttribute('data-tab');
+            var tabContent = document.getElementById(tabName);
+            tabContents.forEach(tabContent => {
+                tabContent.style.display = "none";
+            });
+            tabContent.style.display = "block";
+        });
+    });
+}
