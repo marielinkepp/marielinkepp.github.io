@@ -64,9 +64,6 @@ export function handleTabOpen(tabLinks) {
         tabLink.addEventListener('click', function() {
             var tabName = this.getAttribute('data-tab');
             var tabContent = document.getElementById(tabName);
-            tabContents.forEach(tabContent => {
-                tabContent.style.display = "none";
-            });
             tabContent.style.display = "block";
         });
     });
