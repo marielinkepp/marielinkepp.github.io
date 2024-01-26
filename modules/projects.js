@@ -7,8 +7,8 @@ var nav; // Define nav variable in the global scope
 export function initSwiper() {
     return new Swiper('.swiper', {
         // Optional parameters
-        //direction: 'vertical',
-        //loop: true,
+        direction: 'vertical',
+        loop: true,
     
         // Navigation arrows
         navigation: {
