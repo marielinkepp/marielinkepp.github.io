@@ -24,7 +24,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     handleNavMenuDropdownClick(nav, navMenuDropdown);
 
-    var swiper = initSwiper();
+    // Wait for the entire page to load before initializing the Swiper
+    window.addEventListener('load', (event) => {
+        var swiper = initSwiper();
+    });
 
     // Select all elements with the class 'collapsible'
     var collapsibles = document.querySelectorAll('.collapsible');
