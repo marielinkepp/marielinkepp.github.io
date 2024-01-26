@@ -67,6 +67,14 @@ function handleSectionToggle() {
   });
 }
 
+
+$(document).ready(handleSectionToggle);
+
+window.onload = Collapse;
+
+// Get the element with id="defaultOpen" and click on it
+// document.getElementById("defaultOpen").click();
+
 $(document).ready(function() {
   $('.tableContainer').each(function() {
       var container = $(this);
@@ -74,10 +82,3 @@ $(document).ready(function() {
       loadTableFromCSV(container, csvUrl);
   });
 });
-
-// $(document).ready(handleSectionToggle);
-
-window.onload = Collapse;
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
