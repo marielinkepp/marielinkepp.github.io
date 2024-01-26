@@ -7,6 +7,18 @@ header {
   top:0;
 }
 
+footer {
+  text-align: center; /* Center the text */
+}
+
+#nav-menu-dropdown {
+  float: left;
+}
+
+#nav-menu-search {
+  float: right;
+}
+
 #header_h1 {
   margin: 0;
   font-size: 1.5em;
@@ -14,7 +26,7 @@ header {
   text-align: center;
 }
 
-#nav_links {
+#nav-links {
   text-transform: uppercase;
   /*display: inline-block;*/
   display: none; /* Hide the nav element initially */

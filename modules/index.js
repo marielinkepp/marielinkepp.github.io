@@ -1,6 +1,15 @@
-import {navigateTo} from "./common.js";
+//import {navigateTo} from "./common.js";
 
-selectContent();
+function toggleNav() {
+    var nav = document.getElementById("nav-links");
+    if (nav.style.display === "none") {
+        nav.style.display = "block";
+    } else {
+        nav.style.display = "none";
+    }
+  }
+  
+/*selectContent();
 
 function selectContent() {
     const pageId = new URLSearchParams(window.location.search)
@@ -14,4 +23,4 @@ function selectContent() {
     //applyTemplate(pageId);
     navigateTo('?page=' + pageId);
 
-}
+}*/
