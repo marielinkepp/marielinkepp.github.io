@@ -8,7 +8,7 @@ export function handleNavMenuDropdownClick(nav, navMenuDropdown) {
     });
 }
 
-export function handleLinkClick(nav, links) {
+export function handleLinkClick(nav, links, initSwiper) {
     links.forEach(link => {
         link.addEventListener('click', function(event) {
             var href = this.getAttribute('href'); // Get the href of the link
@@ -29,6 +29,8 @@ export function handleLinkClick(nav, links) {
 
                     // Add an entry to the history stack and change the URL
                     history.pushState({ href: href }, '', href);
+
+                    initSwiper();
                 });
         });
     });
