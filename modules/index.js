@@ -1,16 +1,24 @@
 import {handleNavMenuDropdownClick, handleLinkClick, handleCollapsibleClick} from "./eventhandlers.js";
 
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
 var nav; // Define nav variable in the global scope
 
 export function initSwiper() {
-    return new Swiper('.swiper-container', {
+    return new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
+    
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    
+        // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'fraction', // This will display the pagination as "1/5", "2/5", etc.
         },
     });
 }
