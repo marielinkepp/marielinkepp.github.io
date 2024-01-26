@@ -124,15 +124,6 @@ footer {
   bottom: 10px; /* Position the pagination at the bottom of the Swiper container */
 }
 
-.swiper-scrollbar {
-  height: 4px; /* Change the height of the scrollbar */
-  background: lightgray; /* Change the color of the scrollbar track */
-}
-
-.swiper-scrollbar-drag {
-  background: gray; /* Change the color of the scrollbar handle */
-}
-
 
 .collapsible {
     background-color: white;

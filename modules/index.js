@@ -12,21 +12,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var links = document.querySelectorAll('nav a');
     handleLinkClick(nav, links);
 
+    var swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction', // This will display the pagination as "1/5", "2/5", etc.
+        },
+    });
+
     // Select all elements with the class 'collapsible'
     var collapsibles = document.querySelectorAll('.collapsible');
     handleCollapsibleClick(collapsibles);
-});
-
-var swiper = new Swiper('.swiper-container', {
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction', // This will display the pagination as "1/5", "2/5", etc.
-    },
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
 });
