@@ -12,25 +12,25 @@
     <header>
         <i class="fa-solid fa-bars" onclick="toggleNav()"></i>
         <nav id="nav_links">
-            <select>
-                <option value="index.html">Avaleht</option>
-                <option value="projects.html">Projektid</option>
-                <option value="cv.html">CV</option>
-                <option value="contact.html">Kontakt</option>
-            </select>
+            <ul>
+                <li><a href="?page=index" id="index-link">Avaleht</a></li>
+                <li><a href="?page=projects" id="projects-page-link">Projektid</a></li>
+                <li><a href="?page=cv" id="cv-page-link">CV</a></li>
+                <li><a href="?page=contact" id="contact-page-link">Kontakt</a></li>
+            </ul>
         </nav>
         <h1 id="header_h1">Marielin Kepp</h1>
         <i class="fa-solid fa-magnifying-glass"></i>
     </header>
 
-    <main class="parallax">
+    <main id="main class="parallax"></main>
 
-    </main>
     <footer>
         <p>&copy; Marielin Kepp 2024</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <!--<script src="script.js"></script>-->
+    <script type="module" src="page/modules/index.js"></script>
     <script src="https://kit.fontawesome.com/ae05f791bd.js" crossorigin="anonymous"></script>
 </body>
 </html>

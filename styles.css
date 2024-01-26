@@ -22,7 +22,7 @@ header {
 
 .parallax {
   /* The image used */
-  background-image: url("pawel-czerwinski-hw6Dh3R7yxA-unsplash.jpg");
+  background-image: url("media/pawel-czerwinski-hw6Dh3R7yxA-unsplash.jpg");
 
   /* Set a specific height */
   min-height: 500px; 

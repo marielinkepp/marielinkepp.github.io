@@ -1,3 +1,11 @@
+function applyTemplate(templateName) {
+
+  const content = fetch(`page/pages/${templateName}.html`)
+      .then(response => response.text());
+
+  document.getElementById('content').innerHTML = content;
+}
+
 function loadTemplate(pageName) {
   $('main').load(pageName + '.html');
 }
