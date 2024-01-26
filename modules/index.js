@@ -22,4 +22,11 @@ var swiper = new Swiper('.swiper-container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction', // This will display the pagination as "1/5", "2/5", etc.
+    },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
 });
