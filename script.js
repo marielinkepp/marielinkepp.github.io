@@ -68,7 +68,7 @@ function handleSectionToggle() {
 }
 
 
-$(document).ready(handleSectionToggle);
+//$(document).ready(handleSectionToggle);
 
 window.onload = Collapse;
 
