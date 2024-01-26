@@ -16,3 +16,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var collapsibles = document.querySelectorAll('.collapsible');
     handleCollapsibleClick(collapsibles);
 });
+
+var swiper = new Swiper('.swiper-container', {
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});

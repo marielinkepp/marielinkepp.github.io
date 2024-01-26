@@ -1,4 +1,18 @@
 <main id="main">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <p>a</p>
+            </div>
+            <div class="swiper-slide">
+                <p>a</p>
+            </div>
+        </div>
+    
+        <!-- Add navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
     <h1>Loodusvaatluste andmebaasi kirjete analüüs</h1>
     <div id="section-1" class="section">
         <!--<button type="button" class="collapsible"><h2>1. Uurimisküsimus</h2></button>-->
@@ -7,7 +21,7 @@
                 <h2>1. Uurimisküsimus</h2>
                 <p>Käesoleva töö eesmärgiks oli uurida muutusi loodusvaatluste sisestamises vahemikus 2000-2023.</p>
                 <button type="button" class="collapsible"><p>Püstitatud on järgmised algsed hüpoteesid:</p></button>
-                <div class="content hidden">
+                <div class="content">
                     <ul>
                         <li>H1: Loodusvaatluste sisestamine on aastate vältel järjest suurenenud</li>
                         <li>H2: Vaatlusi sisestatakse kindlatel aegadel (aastaaeg/kuu/nädalapäev) rohkem</li>
@@ -16,7 +30,7 @@
                     </ul>
                 </div>
                 <button type="button" class="collapsible"><p>Eesmärgist lähtuvalt on püstitatud järgmised uurimisküsimused:</p></button>
-                <div class="content hidden">
+                <div class="content">
                     <ul>
                         <li>K1: Kas loodusvaatluste sisestamine on aastate vältel järjest suurenenud?</li>
                         <li>K2: Kas vaatlusi sisestatakse kindlatel aegadel (aastaaeg/kuu/nädalapäev) rohkem?</li>
@@ -34,7 +48,7 @@
                 <ol>
                     <li><a href="https://lva.keskkonnainfo.ee">Loodusvaatluste andmebaasi</a> kõik sisestatud kirjed. Fail on .csv-formaadis.</li>
                     <button type="button" class="collapsible"><p>Tabelites on järgmised veerud:</p></button>
-                    <div class="content hidden">
+                    <div class="content">
                         <li>
                             <ul>
                                 <li><strong>Alg kp</strong>: kujul <em>pp.kk.aaaa</em></li>
@@ -50,7 +64,7 @@
                     <li><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html">Asustusjaotuse ruumiinfo</a> .shp-formaadis, koordinaatide referentssüsteem EPSG:3301</li>
                     
                     <button type="button" class="collapsible"><p>Tabelites on järgmised veerud:</p></button>
-                    <div class="content hidden">
+                    <div class="content">
                         <li>
                             <ul>
                                 <li><strong>ANIMI</strong>: asustusüksuse nimi</li>
@@ -382,13 +396,13 @@
 
             <button type="button" class="collapsible"><h3>Baaskaart</h3></button>
                 <div id="section4-0" class="content">
-                    <iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="300" src="./templates/./templates/testkaart.html" frameborder="0" allowfullscreen></iframe>
                 </div>
             
             <button type="button" class="collapsible"><h3>4.1 Loodusvaatluste erinevused aastate lõikes</h3></button>
                 <div id="section4-1" class="content grid-container">
                     <div class="tab-grid"></div>
-                    <div class="map-grid"><iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="map-grid"><iframe width="100%" height="300" src="./templates/testkaart.html" frameborder="0" allowfullscreen></iframe></div>
                 </div>
 
             <button type="button" class="collapsible"><h3>4.2 Loodusvaatluste erinevused periooditi</h3></button>
@@ -414,7 +428,7 @@
                         <div id="Tab9" class="tabcontent">
                         </div>
                     </div>
-                    <div class="map-grid"><iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="map-grid"><iframe width="100%" height="300" src="./templates/testkaart.html" frameborder="0" allowfullscreen></iframe></div>
 
                 </div>
 
@@ -433,7 +447,7 @@
                         <div id="Tab11" class="tabcontent">
                         </div>
                     </div>
-                    <div class="map-grid"><iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="map-grid"><iframe width="100%" height="300" src="./templates/testkaart.html" frameborder="0" allowfullscreen></iframe></div>
 
                 </div>
 
@@ -450,7 +464,7 @@
                         <div id="Tab13" class="tabcontent">
                         </div>
                     </div>
-                    <div class="map-grid"><iframe width="100%" height="300" src="testkaart.html" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="map-grid"><iframe width="100%" height="300" src="./templates/testkaart.html" frameborder="0" allowfullscreen></iframe></div>
                 </div>
 
         </div>
