@@ -1,4 +1,4 @@
-import gsap from "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+//import gsap from "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
 
 import {handleNavMenuDropdownClick, handleCollapsibleClick, handleTabOpen, addSlideTransitionEffect} from "./eventhandlers.js";
 

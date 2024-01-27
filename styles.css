@@ -215,15 +215,16 @@ footer {
   text-align: left;
 }
 
+/* Text slide-in animation 
+
 .slide-in-text {
   animation: slide 2s ease-out;
 }
 
-/* Text slide-in animation */
 @keyframes slide {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(0); }
-}
+}*/
 
 @keyframes drawBorder {
   0% { border: 2px solid rgba(0, 0, 0, 0); } /* Start with a transparent border */
