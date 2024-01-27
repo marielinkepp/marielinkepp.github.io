@@ -41,22 +41,24 @@ export function handleLinkClick(nav, links) {
 }
 
 export function handleCollapsibleClick(collapsibles) {
-    collapsibles.forEach(collapsible => {
-        // Get the content of the collapsible
-        var content = collapsible.nextElementSibling;
+    for (let i = 0; i < collapsibles.length; i++) {
+        collapsibles[i].addEventListener("click", function() {
+            // Close all section-content elements
+            var sections = document.getElementsByClassName("section-content");
+            for (var j = 0; j < sections.length; j++) {
+                sections[j].style.display = "none";
+            }
 
-        // Set the content to be hidden by default
-        content.style.display = "none";
-
-        collapsible.addEventListener('click', function() {
-            this.classList.toggle('active');
+            // Open or close the content of the clicked collapsible
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
             } else {
                 content.style.display = "block";
             }
         });
-    });
+    }
 }
 
 export function handleTabOpen(tabLinks) {
@@ -67,4 +69,17 @@ export function handleTabOpen(tabLinks) {
             tabContent.style.display = "block";
         });
     });
+}
+
+export function addSlideTransitionEffect() {
+    // Remove the slide-in-text class from all text elements
+    var textElements = document.querySelectorAll('.slide-in-text');
+    textElements.forEach(function (element) {
+        element.classList.remove('slide-in-text');
+    });
+
+    // Add the slide-in-text class to the text element in the active slide
+    var activeSlide = document.querySelector('.swiper-slide-active');
+    var textElement = activeSlide.querySelector('.slide-in-text');
+    textElement.classList.add('slide-in-text');
 }

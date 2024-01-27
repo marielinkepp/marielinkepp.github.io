@@ -75,6 +75,11 @@ footer {
 
 .section {
   padding: 20px;
+  background-color: blanchedalmond;
+  text-align: left;
+  box-sizing: border-box;
+  border: solid 2px transparent; /* Initial border */
+  animation: drawBorder 2s ease-out infinite;
 }
 
 .content {
@@ -97,7 +102,7 @@ footer {
   grid-gap: 20px; /* This adds a 20px gap between grid items */
 }
 
-#content-1 {
+/*#content-1 {
   background-color: blanchedalmond;
 }
 
@@ -120,6 +125,7 @@ footer {
 #section-5 {
   background-color: lightgrey;
 }
+*/
 
 .swiper-button-next, .swiper-button-prev {
   color: red; /* Change the color of the buttons */
@@ -195,6 +201,11 @@ footer {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  text-align: left;
+}
+
+.slide-in-text {
+  animation: slide 2s ease-out;
 }
 
 /* Text slide-in animation */
@@ -203,6 +214,8 @@ footer {
   100% { transform: translateX(0); }
 }
 
-.slide-in-text {
-  animation: slide 2s ease-out;
+@keyframes drawBorder {
+  0% { border-color: transparent; }
+  50% { border-color: #000; } /* Change to your desired border color */
+  100% { border-color: transparent; }
 }
