@@ -44,10 +44,10 @@ export function handleCollapsibleClick(collapsibles) {
     for (let i = 0; i < collapsibles.length; i++) {
         collapsibles[i].addEventListener("click", function() {
             // Close all section-content elements
-            var sections = document.getElementsByClassName("section-content");
+            /*var sections = document.getElementsByClassName("section-content");
             for (var j = 0; j < sections.length; j++) {
                 sections[j].style.display = "none";
-            }
+            }*/
 
             // Open or close the content of the clicked collapsible
             this.classList.toggle("active");

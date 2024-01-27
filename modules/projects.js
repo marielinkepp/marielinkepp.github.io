@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 import {handleNavMenuDropdownClick, handleCollapsibleClick, handleTabOpen, addSlideTransitionEffect} from "./eventhandlers.js";
 
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
