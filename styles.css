@@ -54,6 +54,13 @@ footer {
   display: none; /* Hide the nav element initially */
 }
 
+.swiper-pagination {
+  position: sticky;
+  top: 0; /* Adjust as needed */
+  z-index: 1; /* Ensure the pagination is above other content */
+  /* Add your other styles here */
+}
+
 .parallax {
   /* The image used */
   background-image: url("media/pawel-czerwinski-hw6Dh3R7yxA-unsplash.jpg");
@@ -78,8 +85,8 @@ footer {
   background-color: blanchedalmond;
   text-align: left;
   box-sizing: border-box;
-  border: solid 2px transparent; /* Initial border */
-  animation: drawBorder 2s ease-out infinite;
+  border: solid 5px transparent; /* Initial border */
+  animation: drawBorder 4s ease-out;
 }
 
 .content {
@@ -215,7 +222,9 @@ footer {
 }
 
 @keyframes drawBorder {
-  0% { border-color: transparent; }
-  50% { border-color: #000; } /* Change to your desired border color */
-  100% { border-color: transparent; }
+  0% { border: 2px solid rgba(0, 0, 0, 0); } /* Start with a transparent border */
+    25% { border: 2px solid rgba(0, 0, 0, 1); } /* Fully opaque border */
+    50% { border: 2px solid rgba(0, 0, 0, 1); } /* Hold the fully opaque border */
+    75% { border: 2px solid rgba(0, 0, 0, 0); } /* Transition back to transparent */
+    100% { border: 2px solid rgba(0, 0, 0, 0); } /* End with a transparent border */
 }
