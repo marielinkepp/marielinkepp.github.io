@@ -1,6 +1,6 @@
 //import gsap from "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
 
-import {handleNavMenuDropdownClick, handleCollapsibleClick, handleTabOpen, addSlideTransitionEffect} from "./eventhandlers.js";
+import {handleNavMenuDropdownClick, handleCollapsibleClick, handleTabOpen} from "./eventhandlers.js";
 
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
@@ -29,11 +29,11 @@ function initSwiper() {
         },
 
         // Event handlers
-        on: {
+        /*on: {
             slideChangeTransitionEnd: function() {
                 addSlideTransitionEffect();
             },
-        },
+        },*/
     });
 }
 
