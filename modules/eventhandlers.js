@@ -64,7 +64,7 @@ export function handleCollapsibleClick(collapsibles) {
 export function handleTabOpen(tabLinks) {
     tabLinks.forEach(tabLink => {
         tabLink.addEventListener('click', function() {
-            console.log(tabLink, tabLink.getParentNode())
+            //console.log(tabLink, tabLink.getParentNode())
             var tabName = this.getAttribute('data-tab');
             var tabContent = document.getElementById(tabName);
             if (tabContent.style.display === "none") {
