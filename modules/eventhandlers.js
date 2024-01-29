@@ -64,7 +64,6 @@ export function handleCollapsibleClick(collapsibles) {
 export function handleTabOpen(tabLinks) {
     tabLinks.forEach(tabLink => {
         tabLink.addEventListener('click', function() {
-            //console.log(tabLink, tabLink.getParentNode())
             var tabName = this.getAttribute('data-tab');
             var tabContent = document.getElementById(tabName);
             if (tabContent.style.display === "none") {
@@ -74,6 +73,13 @@ export function handleTabOpen(tabLinks) {
             }
         });
     });
+
+    // Open the first tab content by default
+    if (tabLinks.length > 0) {
+        var firstTabName = tabLinks[0].getAttribute('data-tab');
+        var firstTabContent = document.getElementById(firstTabName);
+        firstTabContent.style.display = "block";
+    }
 }
 
 export function addSlideTransitionEffect() {
