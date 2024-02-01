@@ -122,6 +122,752 @@
 
                 <div class="swiper-slide">
                     <div id="section-3" class="section">
+                        <div><h2 class="grid-item">INTERAKTIIVNE ÜLEVAADE ANDMETÖÖTLUSPROTSESSIST</h2></div>
+  
+                        <div class="grid-container">
+                        
+                            <div class="grid-item section-intro-container">
+                                <div id="grid-1-2" class="section-intro">
+                                <p class="section-nr">1</p>
+                                <p class="section-title">ANDMESTIKE ALGTÖÖTLUS</p>
+                            </div>
+                                <div id="grid-2-2" class="section-intro">
+                                    <p class="section-nr">2</p>
+                                    <p class="section-title">LIIKIDE KOHTA LISAINFO LEIDMINE</p>
+                            </div>
+                                <div id="grid-7-2" class="section-intro"><p class="section-nr">3</p><p class="section-title">ANDMETABELITE ÜHENDAMINE, <br> GEOKODEERIMINE</p></div>
+                            </div>
+                            
+                            <div id="lv-el"class="grid-item table">
+                                <div>
+                                    <table id="lv-0" class="grid-table-container toggle-open">
+                                        <tr>
+                                            <th class="tooltip">LOODUSVAATLUSED 
+                                            <span class="tooltiptext right"><p>Esmalt töötlesin loodusvaatluste tabeli algkuju, eemaldades kõik ebasobivad kirjed ja teisendades olemasolevad sobivamale kujule. Loon uue csv-faili: loodusvaatlused_toodeldud</p></span> </th>
+                                        </tr>
+                                        <tr>
+                                            <td id="lv-alg-kp" class="tooltip"> Alg kp <span class="tooltiptext right"><p>Asendasin kõik tühikud punktidega <em>(nt 26.11 2023 → 26.11.2023)</em>; eemaldan tühjad veerud</p></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="lv-liik" class="tooltip"> Liik <span class="tooltiptext right"><p>Eemaldan tühjad veerud</p></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Arv</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="lv-vk" class="tooltip"> Vaatluskoht <span class="tooltiptext right"><p>Loon veeru 'Vaatluskoht' põhjal uued veerud 'Maakond', 'Omavalitsus' ja 'Asustusüksus'; Teisendan loodusvaatluse ja ansustusülksuste tabelites mõlemas tabelis veerud (maakond, omavalitsus, ausustüksus) sõnedeks (igaks juhuks) ja eemaldan tühikud</p></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Staatus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="lv-mk" class="special-open">Maakond</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="lv-ov" class="special-open">Omavalitsus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="lv-au" class="special-open tooltip"> Asustusüksus <span class="tooltiptext right"><p>Eemaldasin kõik "...küla küla" kujul olevatest nimedest teise "küla"</p></span></td>
+                                            
+                                        </tr>
+                                    </table> 
+                                </div>
+                                <button class="button-52" role="button" data-table-id="lv-0">1.1</button>
+                            </div>
+                            
+                            <div id="ut-el" class="grid-item table"><button class="button-52" role="button" data-table-id="ut">3.1</button>
+                                <div>
+                                    <table id="ut" class="grid-table-container toggle-open">
+                                        <tr>
+                                            <th class="tooltip">ÜHENDTABEL
+                                            <span class="tooltiptext left"><p>Ühendasin liikide arvude tabelis oleva info loodusvaatluste algtabeliga.</p>
+                                            <p>Ühendasin loodusvaatluste tabeli liikide arvude tabeliga. Lõin uue csv-faili: loodusvaatlused_liigiinfoga</p>
+                                                                            <p>Lõin veeru Alg kp põhjal uued veerud päev, kuu, aasta. Nende datetime-formaati teisendamisel leidsin vastava nädalapäev ja tegin holiday mooduli abil kindlaks, kas antud kuupäev oli püha või mitte. Lõin uue csv-faili: loodusvaatlused_liigiinfoga_ajaandmetega</p>
+                                                    
+                                                                            <p>Ühendasin asustusüksuste tabeli loodusvaatluste ühendtabeliga, et lisada igale vaatlusele geoandmed. Määran koordinaatsüsteemiks minu andmetabelis kasutusel oleva Eesti süsteemi (EPSG:3301). Lõin uue veeru iga asukoha keskpunkti andmetega ning teisendasin selle koordinaatsüsteemi CRS (WGS84), sest kaartide loomiseks kasutata Folium on vaikimis selles süsteemis.</p>
+                                                <p>Kaitsekategooriate tabeli liikide arvude tabeliga ühendamisel selgus, et kõik eesti- ja ladinakeelsed liiginimed ei kattu.</p>
+                                                        
+                                                                                    <p>Kontrollisin e-elurikkuse andmebaasist, millisne on sobiv kujuy ningtegin käsitsi muduatused. Muutsin kaitsekategooriate tabelis ladinakeelsed liiginimed käsitsi ära.</p>
+                                                                                    
+                                                                                    <p>Enamasti oli liiginimi asendatud alamliigi nimega:</p>
+                                                                                    <ul>
+                                                                                    <li><em>teder</em>, Tetrao tetrix → Lyrurus tetrix</li>
+                                                                                    <li><em>laanepüü</em>, Bonasa bonasia → Tetrastes bonasia</li>
+                                                                                    <li><em>väike-kirjurähn</em>, Dendrocopos minor → Dryobates minor</li>
+                                                                                    <li><em>arusisalik</em>, Lacerta vivipara → Zootoca vivipara</li>
+                                                                                    <li><em>tiigikonn</em>, Rana lessonae → Pelophylax lessonae</li>
+                                                                                    </ul>
+                                                                                    
+                                                                                    <p>Mõned olid kirjavead:</p>
+                                                                                    <ul>
+                                                                                    <li><em>roo-loorkull</em>, Circus aeroginosus → Circus aeruginosus</li>
+                                                                                    <li><em>veelendlane</em>, Myotis daubentoni → Myotis daubentonii</li>
+                                                                                    <li><em>must-seenesultan</em>, Oxyporus mannerheimi → Oxyporus mannerheimii</li>
+                                                                                    <li><em>karukold</em>, Lycopodium clavatum. → Lycopodium clavatum</li>
+                                                                                    <li><em>tamme-kirjurähn</em>, Dendrocopos medius → Dendrocoptes medius</li>
+                                                                                    <li><em>väiketiir</em>, Sterna albifrons → Sternula albifrons</li>
+                                                                                    <li><em>mets-vareskold</em>, Diphasium complanatum → Diphasiastrum complanatum</li>
+                                                                                    <li><em>soopart</em>, Anas acuta (haudeasurkond) → Anas acuta</li>
+                                                                                    <li><em>rüüt</em>, Pluvialis aprcaria → Pluvialis apricaria</li>
+                                                </ul>
+                                        
+                                                                                    <p>Eelmist tabelit vaadeldes selgus, et osades liikide tabelis olid mõned duplikaadid. Eemaldasin tabelist duplikaadid liites korduvate liikide arvud ning lõin uue csv-faili: liikide_arvud_duplikaatideta.</p>
+                                                                                    <p>Mõnel isendil oli liigi ja alamliigi nimega kirje:</p>
+                                                                                    <ul>
+                                                                                    <li><em>kahkjaspunane sõrmkäpp</em>, Dactylorhiza incarnata subsp. incarnata → Dactylorhiza incarnata</li>
+                                                                                    <li><em>kuradi-sõrmkäpp</em>, Dactylorhiza maculata subsp. maculata → Dactylorhiza maculata</li>
+                                                                                    <li><em>kivitäks</em>, Oenanthe oenanthe subsp. oenanthe → Oenanthe oenanthe</li>
+                                                                                    <li><em>harilik käoraamat</em>, Gymnadenia conopsea subsp. conopsea → Gymnadenia conopsea</li>
+                                                                                    </ul>
+                                                                                    
+                                                                                    <p>Osad olid sünonüümsed liiginimed, jätsin tuntuma kuju:</p>
+                                                                                    <ul>
+                                                                                    <li><em>teder</em>, Tetrao tetrix → Lyrurus tetrix</li>
+                                                                                    <li><em>päevapaabusilm</em>, Inachis io → Aglais io</li>
+                                                                                    <li><em>sinitihane</em>, Cyanistes caeruleus → Parus caeruleus</li>
+                                                                                    <li><em>hallvares</em>, Corvus corone cornix → Corvus cornix</li>
+                                                                                    </ul>
+                                                                                    
+                                                                                    <p>Osad kirjed olid ilma eestikeelse nimetuseta ja eestikeelne vaste puudus täielikult. Neil jätsin ladinakeelse nimetuse:</p>
+                                                                                    <ul>
+                                                                                    <li>Andrena vaga</li>
+                                                                                    <li>Oberea pupillata</li>
+                                                                                    <li>Laphria gibbosa</li>
+                                                                                    <li>Poecilium alni</li>
+                                                                                    <li>Carpocoris (Carpocoris) purpureipennis → Carpocoris purpureipennis</li>
+                                                                                    <li>Phiaris dissolutana</li>
+                                                                                    <li>Stenostola ferrea</li>
+                                                                                    <li>Pachyta lamed</li>
+                                                                                    <li>Obrium cantharinum</li>
+                                                                                    </ul>
+
+                                            
+                                            </span></th>
+                                        </tr>
+                                        <tr>
+                                            <td id="ut-ek" class="extracted">eestikeelne nimetus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="ut-lk" class="extracted">ladinakeelne nimetus</td>
+                                        </tr>
+                                        <tr>
+                                            <td>arv</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="ut-paev" class="extracted special-open">päev</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="ut-kuu" class="extracted special-open">kuu</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="ut-aasta" class="extracted special-open">aasta</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="ut-np" class="extracted special-open">nädalapäev</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="ut-puha" class="extracted special-open">püha</td>
+                                        </tr>
+                                        <tr>
+                                            <td>staatus</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">riik</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">hõimkond</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">klass</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">selts</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">sugukond</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">perekond</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">rangus</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">täpsustus</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">MNIMI</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">ONIMI</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="special-open">ANIMI</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="li-el" class="grid-item table toggle-open"><button class="button-52" role="button">2.2</button>
+                                <div>
+                                    <table id="LIIGI INFO" class="grid-table-container">
+                                        <tr>
+                                            <th id="li-title" class="tooltip">LIIGI INFO 
+                                            <span class="tooltiptext right">
+                                                                                <h5>Andmebaasist tagastati iga liigi kohta sõnastik järgmisel kujul infoga (näitena toodud rebane e. päring Vulpes Vulpes):</h5><ul>
+                                                                                            <li>'usageKey': 5219243</li>
+                                                                                            <li>'scientificName': 'Vulpes vulpes (Linnaeus, 1758)'</li>
+                                                                                            <li>'canonicalName': 'Vulpes vulpes'</li>
+                                                                                            <li>'rank': 'SPECIES'</li>
+                                                                                            <li>'status': 'ACCEPTED'</li>
+                                                                                            <li>'confidence': 99</li>
+                                                                                            <li>'matchType': 'EXACT'</li>
+                                                                                            <li><span style="color: green;">'kingdom (riik)': 'Animalia'</span></li>
+                                                                                            <li><span style="color: green;">'phylum (hõimkond)': 'Chordata'</span></li>
+                                                                                            <li><span style="color: green;">'order (selts)': 'Carnivora'</span></li>
+                                                                                            <li><span style="color: green;">'family (sugukond)': 'Canidae'</span></li>
+                                                                                            <li><span style="color: green;">'genus (perekond)': 'Vulpes'</span></li>
+                                                                                            <li>'species': 'Vulpes vulpes'</li>
+                                                                                            <li>'kingdomKey': 1</li>
+                                                                                            <li>'phylumKey': 44</li>
+                                                                                            <li>'classKey': 359</li>
+                                                                                            <li>'orderKey': 732</li>
+                                                                                            <li>'familyKey': 9701</li>
+                                                                                            <li>'genusKey': 5219234</li>
+                                                                                            <li>'speciesKey': 5219243</li>
+                                                                                            <li>'synonym': False</li>
+                                                                                            <li><span style="color: green;">'class (klass)': 'Mammalia'</span></li>
+                                                                                        </ul>
+                                                                                        <em>Rohelisega on märgitud kirjed, mida oma andmetabelis kasutan. Neile on lisatud ka eestikeelsed tõlekd, mille järgmises sammus lisasin.</em>                          
+                                                                                    </span> </th>
+                                                        
+                                        </tr>
+                                        <tr>
+                                            <td>usageKey</td>
+                                        </tr>
+                                        <tr>
+                                            <td>scientificName</td>
+                                        </tr>
+                                        <tr>
+                                            <td>canonicalName</td>
+                                        </tr>
+                                        <tr>
+                                            <td>rank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>status</td>
+                                        </tr>
+                                        <tr>
+                                            <td>confidence</td>
+                                        </tr>
+                                        <tr>
+                                            <td>matchType</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="li-riik">kingdom (riik)</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="li-hk">phylum (hõimkond)</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="li-selts">order (selts)</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="li-sk">family (sugukond)</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="li-pk">genus (perekond)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>species</td>
+                                        </tr>
+                                        <tr>
+                                            <td>kingdomKey</td>
+                                        </tr>
+                                        <tr>
+                                            <td>phylumKey</td>
+                                        </tr>
+                                        <tr>
+                                            <td>classKey</td>
+                                        </tr>
+                                        <tr>
+                                            <td>orderKey</td>
+                                        </tr>
+                                        <tr>
+                                            <td>familyKey</td>
+                                        </tr>
+                                        <tr>
+                                            <td>genusKey</td>
+                                        </tr>
+                                        <tr>
+                                            <td>speciesKey</td>
+                                        </tr>
+                                        <tr>
+                                            <td>synonym</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="li-klass">class (klass)</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="la-el" class="grid-item table">
+                                <button class="button-52" role="button" data-table-id="la1">2.1</button>
+                                <table id="la1" class="grid-table-container toggle-open">
+                                    <tr>
+                                        <th class="tooltip">LIIKIDE ARVUD 
+                                        <span class="tooltiptext right"><p>Algkujul tabelis oli olemas ainult ladina- ja eestikeelne liiginimi. Lõin uue tabeli, et leida liikide esinemissagedused ja iga liigi isendi kohta taksonoomilised andmed lisada.</p>
+                                                                            <p>Lõin loodusvaatluste tabeli põhjal uue tabeli, kus olid liigid koos esinemissagedustega <em>(COUNT operatsioon 'Liik' veerul)</em> ning sorteerisin selle kahanevas järjekorras. Lõin liiginime veeru põhjal eraldi veerud ladina- ja eestikeelse nime jaoks.</p></span> </th>
+                                    </tr>
+                                    <tr>
+                                        <td id="la-liik" class="tooltip"> Liik <span class="tooltiptext right"><p>Mõnes reas oli liiginimi määramata, täiendasin andmetabelit käsitsi.</p></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arv</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="special-open extracted">Ladinakeelne nimetus</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="special-open extracted tooltip"> Eestikeelne nimetus <span class="tooltiptext right"><p>Mõnes reas polnud eestikeelset nimetust</p></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Liigi info</td>
+                                    </tr>
+
+                                </table> 
+                            </div>
+
+                            <div class="grid-item">
+                                <div class="small-box tooltip">GBIF API 
+                                <span class="tooltiptext right">
+                                                                    <p>Kasutasin Maailma elurikkuse andmeportaali (Global Biodiversity Information Facility e. GBIF) API-d <em>(vt. funktsiooni liigi_info_paring)</em> ning tegin iga ladinakeelse liiginime kohta päringu. Salvestasin vahetulemuse csv-faili (liikide_arvud_infoga), et protsessi kordama ei peaks.</p></span> </div>
+                                
+                                <div class="small-box">Vikipeedia</div>
+                                
+                                <div class="small-box">eElurikkus</div>
+                            </div>
+                            
+                            <div id="kk-el" class="grid-item table toggle-open"><button class="button-52" role="button" data-table-id="kk">2.3</button>
+                                <div>
+                                    <table id="kk" class="grid-table-container">
+                                        <tr>
+                                            <th id="kk-title" class="tooltip">KAITSEKATEGOORIAD 
+                                            <span class="tooltiptext left"><p>Kasutasin Vikipeedia artiklit <a href="https://et.wikipedia.org/wiki/Looduskaitse_all_olevad_liigid_Eestis">https://et.wikipedia.org/wiki/Looduskaitse_all_olevad_liigid_Eestis</a> (algallikas ... TODO) ning lõin selle põhjal Eestis kaitse all olevate liikide nimekirja.</p>
+                                                                                        <ul>
+                                                                                            <li>eestikeelne nimetus</li>
+                                                                                            <li>ladinakeelne nimetus</li>
+                                                                                            <li>rangus (I, II, III)</li>
+                                                                                            <li>täpsustus (liik)</li>
+                                                                                        </ul></span> </th>
+                                        </tr>
+                                        <tr>
+                                            <td>eestikeelne nimetus</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ladinakeelne nimetus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="kk-1">rangus (I, II, III)</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="kk-2">täpsustus (liik)</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="au-el"class="grid-item table toggle-open">
+                                    <button class="button-52" role="button" data-table-id="au">1.2</button>
+
+                                <div>
+                                    <table id="au" class="grid-table-container">
+                                        <tr>
+                                            <th class="tooltip">ASUSTUSÜKSUSED 
+                                            <span class="tooltiptext left"><p>Tabelisse jäid alles ainult loodusvaatluste tabeliga ühtivad asustusüksused ja omavalitsused.</p></span> </th>
+                                        </tr>
+                                        <tr>
+                                            <td class="tooltip"> ANIMI <span class="tooltiptext left"><p>Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</p></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AKOOD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TYYP</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tooltip"> ONIMI <span class="tooltiptext right"><p>Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</p></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>OKOOD</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tooltip"> MNIMI <span class="tooltiptext right"><p>Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</p></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>MKOOD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>geometry</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            
+                            </div>
+
+                            <div id="gk-el" class="grid-item table toggle-open"><button class="button-52" role="button" data-table-id="gk">3.2</button> 
+                                <div>
+                                    <table id="gk" class="grid-table-container">
+                                        <tr>
+                                            <th>GEOKODEERITUD TABEL</th>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-ek-nimi" class="extracted">eestikeelne nimetus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-lk-nimi" class="extracted">ladinakeelne nimetus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-arv">arv</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-paev" class="extracted">päev</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-kuu" class="extracted">kuu</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-aasta" class="extracted">aasta</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-np" class="extracted">nädalapäev</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-puha" class="extracted">püha</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-lv-staatus">staatus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-li-riik">riik</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-li-hk">hõimkond</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-li-klass">klass</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-li-selts">selts</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-li-sk">sugukond</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-li-pk">perekond</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-kk-rangus">rangus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-kk-tapsustus">täpsustus</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-mnimi">MNIMI</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-onimi">ONIMI</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-animi">ANIMI</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-akood">AKOOD</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-okood">OKOOD</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-mkood">MKOOD</td>
+                                        </tr>
+                                        <tr>
+                                            <tr>
+                                            <td id="gk-au-pkood" class="extracted">PKOOD</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-tuup">TYYP</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-geometry">geometry</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="gk-au-centroid" class="extracted">centroid</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                        <!--
+                        <div class="custom-table-grid-container">
+                            <div id="grid-0">1</div>
+                            <div id="grid-1" class="grid-table-container">
+                              
+                              <table id="LOODUSVAATLUSED">
+                            <tr>
+                              <th>LOODUSVAATLUSED</th>
+                            </tr>
+                            <tr>
+                              <td id="lv-alg-kp">Alg kp</td>
+                            </tr>
+                            <tr>
+                              <td id="lv-liik">Liik</td>
+                            </tr>
+                            <tr>
+                              <td>Arv</td>
+                            </tr>
+                            <tr>
+                              <td id="lv-vk">Vaatluskoht</td>
+                            </tr>
+                            <tr>
+                              <td>Staatus</td>
+                            </tr>
+                            <tr>
+                              <td id="lv-mk">Maakond</td>
+                            </tr>
+                            <tr>
+                              <td id="lv-ov">Omavalitsus</td>
+                            </tr>
+                            <tr>
+                              <td id="lv-au">Asustusüksus</td>
+                            </tr>
+                              </table>     
+                            </div>
+                          
+                            <div id="grid-2">2</div>
+                            <div id="grid-2-0" class="grid-table-container"><table id="GBIF API">
+                            <tr>
+                              <th>GBIF API</th>
+                            </tr>
+                              </table></div>
+                            
+                            <div id="grid-3-0" class="grid-table-container"><table id="Vikipeedia API">
+                            <tr>
+                              <th>Vikipeedia (API)</th>
+                            </tr>
+                              </table></div>
+                            
+                            <div id="grid-2-1" class="grid-table-container"><table id="LIIGI INFO">
+                            <tr>
+                              <th>LIIGI INFO</th>
+                            </tr>
+                            <tr>
+                              <td>usageKey</td>
+                            </tr>
+                            <tr>
+                              <td>scientificName</td>
+                            </tr>
+                            <tr>
+                              <td>canonicalName</td>
+                            </tr>
+                            <tr>
+                              <td>rank</td>
+                            </tr>
+                            <tr>
+                              <td>status</td>
+                            </tr>
+                            <tr>
+                              <td>confidence</td>
+                            </tr>
+                            <tr>
+                              <td>matchType</td>
+                            </tr>
+                            <tr>
+                                <td id="li-riik">kingdom (riik)</td>
+                            </tr>
+                            <tr>
+                              <td id="li-hk">phylum (hõimkond)</td>
+                            </tr>
+                            <tr>
+                              <td id="li-selts">order (selts)</td>
+                            </tr>
+                            <tr>
+                              <td id="li-sk">family (sugukond)</td>
+                            </tr>
+                            <tr>
+                              <td id="li-pk">genus (perekond)</td>
+                            </tr>
+                            <tr>
+                              <td>species</td>
+                            </tr>
+                            <tr>
+                              <td>kingdomKey</td>
+                            </tr>
+                            <tr>
+                              <td>phylumKey</td>
+                            </tr>
+                            <tr>
+                              <td>classKey</td>
+                            </tr>
+                            <tr>
+                              <td>orderKey</td>
+                            </tr>
+                            <tr>
+                              <td>familyKey</td>
+                            </tr>
+                            <tr>
+                              <td>genusKey</td>
+                            </tr>
+                            <tr>
+                              <td>speciesKey</td>
+                            </tr>
+                            <tr>
+                              <td>synonym</td>
+                            </tr>
+                            <tr>
+                              <td id="li-klass">class (klass)</td>
+                            </tr>
+                          </table></div>
+                          
+                            <div id="grid-2-2" class="grid-table-container"><table id="KAITSEKATEGOORIAD">
+                            <tr>
+                              <th>KAITSEKATEGOORIAD</th>
+                            </tr>
+                            <tr>
+                              <td>eestikeelne nimetus</td>
+                            </tr>
+                            <tr>
+                              <td>ladinakeelne nimetus</td>
+                            </tr>
+                            <tr>
+                              <td>rangus (I, II, III)</td>
+                            </tr>
+                            <tr>
+                              <td>täpsustus (liik)</td>
+                            </tr>
+                          </table></div>
+                          
+                            
+                           <div id="grid-3">3</div>
+                            <div id="grid-3-1" class="grid-table-container"><table id="ASUSTUSÜKSUSED">
+                            <tr>
+                              <th>ASUSTUSÜKSUSED</th>
+                            </tr>
+                            <tr>
+                              <td>ANIMI</td>
+                            </tr>
+                            <tr>
+                              <td>AKOOD</td>
+                            </tr>
+                            <tr>
+                              <td>TYYP</td>
+                            </tr>
+                            <tr>
+                              <td>ONIMI</td>
+                            </tr>
+                            <tr>
+                              <td>OKOOD</td>
+                            </tr>
+                            <tr>
+                              <td>MNIMI</td>
+                            </tr>
+                            <tr>
+                              <td>MKOOD</td>
+                            </tr>
+                          </table></div>
+                          
+                            <div id="grid-4">4</div>
+                            <div id="grid-4-1" class="grid-table-container"><table id="GEOKODEERITUD TABEL">
+                            <tr>
+                              <th>GEOKODEERITUD TABEL</th>
+                            </tr>
+                            <tr>
+                                <td id="gk-ek-nimi">ladinakeelne nimetus</td>
+                            </tr>
+                            <tr>
+                                <td id="gk-lk-nimi">ladinakeelne nimetus</td>
+                            </tr>
+                            <tr>
+                              <td>arv</td>
+                            </tr>
+                            <tr>
+                              <td id="gk-paev">päev</td>
+                            </tr>
+                            <tr>
+                              <td id="gk-kuu">kuu</td>
+                            </tr>
+                            <tr>
+                              <td id="gk-aasta">aasta</td>
+                            </tr>
+                            <tr>
+                              <td id="gk-np">nädalapäev</td>
+                            </tr>
+                            <tr>
+                              <td>püha</td>
+                            </tr>
+                            <tr>
+                              <td>staatus</td>
+                            </tr>
+                            <tr>
+                              <td id="gk-riik">riik</td>
+                            </tr>
+                            <tr>
+                                <td id="gk-hk">hõimkond</td>
+                            </tr>
+                            <tr>
+                              <td id="gk-klass">klass</td>
+                            </tr>
+                            <tr>
+                                <td id="gk-selts">selts</td>
+                            </tr>
+                            <tr>
+                              <td id="gk-sk">sugukond</td>
+                            </tr>
+                            <tr>
+                              <td id="gk-pk">perekond</td>
+                            </tr>
+                            <tr>
+                              <td>rangus</td>
+                            </tr>
+                            <tr>
+                              <td>täpsustus</td>
+                            </tr>
+                            <tr>
+                              <td>MNIMI</td>
+                            </tr>
+                            <tr>
+                              <td>ONIMI</td>
+                            </tr>
+                            <tr>
+                              <td>ANIMI</td>
+                            </tr>
+                            <tr>
+                              <td>AKOOD</td>
+                            </tr>
+                            <tr>
+                              <td>OKOOD</td>
+                            </tr>
+                            <tr>
+                              <td>MKOOD</td>
+                            </tr>
+                            <tr>
+                              <tr>
+                              <td>PKOOD</td>
+                            </tr>
+                            <tr>
+                              <td>TYYP</td>
+                            </tr>
+                            <tr>
+                              <td>geometry</td>
+                            </tr>
+                            <tr>
+                              <td>centroid</td>
+                            </tr>
+                          </table></div>
+                          </div>
+
                         <button type="button" class="collapsible"><h2>3. Andmetöötlusprotsess</h2></button>
                         <div class="content">
                 
@@ -406,9 +1152,10 @@
                     
                                 </div>
                             
-                        </div>
+                        </div>-->
                     </div>
                 </div>
+
                 <div class="swiper-slide">
                     <div id="section-4" class="section">
                         <button type="button" class="collapsible"><h2>4. Tulemused</h2></button>
@@ -534,6 +1281,8 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/ae05f791bd.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/jsplumb"></script>
     <script type="module" src="../modules/projects.js"></script>
+   
 </body>
 </html>
