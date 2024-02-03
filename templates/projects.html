@@ -372,19 +372,19 @@
                                 <td>Arv</td>
                               </tr>
                               <tr>
-                                <td id="lv-vk" class="tooltip"> Vaatluskoht <span class="tooltiptext right"><p>Loon veeru 'Vaatluskoht' põhjal uued veerud 'Maakond', 'Omavalitsus' ja 'Asustusüksus'; Teisendan loodusvaatluse ja ansustusülksuste tabelites mõlemas tabelis veerud (maakond, omavalitsus, ausustüksus) sõnedeks (igaks juhuks) ja eemaldan tühikud</p></span></td>
+                                <td id="lv-vk" class="tooltip" data-target-ids="lv-mk,lv-ov,lv-au"> Vaatluskoht <span class="tooltiptext right"><p>Loon veeru 'Vaatluskoht' põhjal uued veerud 'Maakond', 'Omavalitsus' ja 'Asustusüksus'; Teisendan loodusvaatluse ja ansustusülksuste tabelites mõlemas tabelis veerud (maakond, omavalitsus, ausustüksus) sõnedeks (igaks juhuks) ja eemaldan tühikud</p></span></td>
                               </tr>
                               <tr>
                                 <td>Staatus</td>
                               </tr>
                               <tr>
-                                <td id="lv-mk" class="special-open">Maakond</td>
+                                <td id="lv-mk" class="special-open extracted">Maakond</td>
                               </tr>
                               <tr>
-                                <td id="lv-ov" class="special-open">Omavalitsus</td>
+                                <td id="lv-ov" class="special-open extracted">Omavalitsus</td>
                               </tr>
                               <tr>
-                                <td id="lv-au" class="special-open tooltip"> Asustusüksus <span class="tooltiptext right"><p>Eemaldasin kõik "...küla küla" kujul olevatest nimedest teise "küla"</p></span></td>
+                                <td id="lv-au" class="special-open tooltip extracted"> Asustusüksus <span class="tooltiptext right"><p>Eemaldasin kõik "...küla küla" kujul olevatest nimedest teise "küla"</p></span></td>
                                 
                               </tr>
                                 </table> 
@@ -463,11 +463,13 @@
                                 
                             
                             </div>
-                            
-                              <div id="li-el" class="grid-item table toggle-open" data-grid-item-index="4">
-                                <div id="gbif-api" class="small-box tooltip">GBIF API 
+                              
+                              <div id="gbif-api" class="grid-item small-box tooltip">GBIF API 
                                 <span class="tooltiptext right">
                                                                </span> </div>
+                            
+                              <div id="li-el" class="grid-item table toggle-open" data-grid-item-index="4">
+                                
                              <div>
                             <table id="LIIGI INFO" class="grid-table-container" data-bgcolor="#ccff99">
                               <tr>
@@ -573,12 +575,15 @@
                                 </table> 
                             </div>
                             
-                              <div class="grid-item " data-grid-item-index="3">
+                              
+                              <div id="wiki-api" class="grid-item small-box" data-grid-item-index="3">
                                   
-                                  <div class="small-box">Vikipeedia</div>
+                                <div>Vikipeedia</div></div>
+                              
+                               <div id="ee-api" class="grid-item small-box" data-grid-item-index="3">
                                   
-                                  <div class="small-box">eElurikkus</div>
-                              </div>
+                                <div>eElurikkus</div></div>
+                                  
                               
                               <div id="kk-el" class="grid-item table toggle-open" data-grid-item-index="5"><div><table id="kk" class="grid-table-container" data-bgcolor="#CCFFF9">
                               <tr>
@@ -723,8 +728,7 @@
                             </table></div>
                             </div>
                             </div>
-                        
-                    </div>
+                     </div>
                 </div>
 
                 <div class="swiper-slide">
