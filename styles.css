@@ -234,7 +234,6 @@ footer {
     100% { border: 2px solid rgba(0, 0, 0, 0); } /* End with a transparent border */
 }
 
-
 .grid-container{
   position: relative;
   display:grid;
@@ -247,8 +246,7 @@ footer {
   height:100vh;*/
 }
 
-
-.grid-item{
+.grid-item {
   transition: transform 0.5s;
   padding:20px;
   display: flex;
@@ -257,6 +255,10 @@ footer {
   /*border: 1px solid black;*/
   width:fit-content;
   height:fit-content;
+}
+
+.grid-item.hidden {
+  display: none;
 }
 
 /*.grid-item:target {
@@ -828,9 +830,11 @@ td {
     z-index: 0; }
   .cards-container section .year {
     text-align: center;
-    font-size: 16px;
+    /*font-size: 16px;*/
     margin: 0; 
-position: absolute;}
+/*position: absolute;*/}
+
+
   .cards-container section .title {
     font-weight: 400; }
   .cards-container section img {

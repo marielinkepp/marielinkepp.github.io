@@ -171,131 +171,6 @@ document.body.addEventListener('mouseover', function(e) {
     }
 });
 
-// JSPLUMB
-jsPlumb.ready(function() {
-    function createInstance(connector, sourceAnchor, targetAnchor, dashStyle, overlays) {
-        var instance = jsPlumb.getInstance({
-            Connector: connector,
-            PaintStyle: { strokeWidth: 2, stroke: 'black', dashstyle: dashStyle},
-            Endpoint: [ "Dot", { radius: 1 } ],
-            EndpointStyle: { fill: '#f00' },
-            Anchors: [sourceAnchor, targetAnchor],
-            Overlays: overlays
-        });
-
-        return instance;
-    }
-
-    function connectElements(instance, sourceId, targetId) {
-        instance.connect({ source: sourceId, target: targetId});
-    }
-  
-var flowchartConnector = ["Flowchart", { stub: 30, gap: 5, cornerRadius: 10, alwaysRespectStubs: true } ]
-
-var straightConnector = ['Straight']
-
-  
-  // Example usage:
-var overlays = [
-    [ "Arrow", { 
-        location: 1, 
-        id: "arrow", 
-        length: 14, 
-        foldback: 0.8 
-    } ]
-];
-
- /* var lvElToUtEl = createInstance(straightConnector, [1.15, 0.5, 1, 0], [0, 0.5, -1, 0], "0 0", overlays);
-    connectElements(lvElToUtEl, 'lv-el', 'ut-el');*/
-  
-  /*var lvAuConnect = createInstance(straightConnector, [0.5, 1.25, 0, 0], [0.5, -0.25, 0, 0], "0 0");
-    connectElements(lvAuConnect, 'lv-el', 'au-el');*/
-  
-  /*var auElToGkEl = createInstance(straightConnector, [1.15, 0.5, 1, 0], [0, 0.5, -1, 0], "0 0", overlays);
-    connectElements(auElToGkEl, 'au-el', 'gk-el');
-  
-  var utToGk = createInstance(straightConnector, [0.5, 1.25, 0, 0], [0.5, -0.25, 0, 0], "0 0", overlays);
-    connectElements(utToGk, 'ut-el', 'gk-el');
-  
-  var lvLaConnect = createInstance(straightConnector, [1.15, 0.5, 0, 0], [-0.1, 0.5, 0, 0], "0 0");
-    connectElements(lvLaConnect, 'lv-el', 'la-el');
-  
-  var laToUt = createInstance(flowchartConnector, [0.75, 0, 0, 1], [0.5, 1.25, 0, 1], "0 0", overlays);
-    connectElements(laToUt, 'la-el', 'ut-el');
-  
-    var liToLa = createInstance(flowchartConnector, [0.5, 0, 0, -1], [0.5, 0, 0, -1], "0 0", overlays);
-    connectElements(liToLa, 'li-el', 'la-el');
-  
-  var kkToLa = createInstance(flowchartConnector, [0.5, 1, 0, 1], [0.5, 1, 0, 1], "0 0", overlays);
-    connectElements(kkToLa, 'kk-el', 'la-el');
-  
-  var lvVkDivide = createInstance(flowchartConnector, [-0.15, 0.5, -1, 0], [-0.15, 0.5, -1, 0], "4 1", overlays);
-    connectElements(lvVkDivide, 'lv-vk', 'lv-mk');
-  connectElements(lvVkDivide, 'lv-vk', 'lv-ov');
-  connectElements(lvVkDivide, 'lv-vk', 'lv-au'); 
-  
-  
- /* var la2ToGBIF = createInstance([1.15, 0.5, 1, 0], [0, 0.5, -1, 0], "0 0", overlays);
-    connectElements(la2ToGBIF, 'la2-ek', 'grid-3-2');
-  
-  var instance11 = createInstance([1.1, 0.5, 1, 1], [-0.25, 0.5, 0, 0], "0 0", overlays);
-    connectElements(instance11, 'grid-3-2', 'li-title');
-  
- var vikiAPITokk = createInstance([0.5, 0.5, 1, 0], [0.5, -1, 0, 0], "0 0", overlays);
-    connectElements(vikiAPITokk, 'grid-4-2', 'kk-title');
-  
-   var eElTokk = createInstance([-0.025, 0.5, 0, 0], [5, 0, 0, 0], "0 0", overlays);
-    connectElements(eElTokk, 'grid-5-2', 'la2-liik');
-  
-  var lvVkDivide = createInstance([-0.15, 0.5, -1, 0], [-0.15, 0.5, -1, 0], "4 1", overlays);
-    connectElements(lvVkDivide, 'lv-vk', 'lv-mk');
-  connectElements(lvVkDivide, 'lv-vk', 'lv-ov');
-  connectElements(lvVkDivide, 'lv-vk', 'lv-au');
-  
-  var lvLiiktoLa = createInstance([1.15, 0.5, 1, 0], [1.15, 0.5, 1, 0], "4 1", overlays);
-    connectElements(lvLiiktoLa, 'lv-liik', 'la-lk');
-  connectElements(lvLiiktoLa, 'lv-liik', 'la-ek');
-  
-  var lvAlgKpToGk = createInstance([1.15, 0.35, 1, 0], [1.15, 0.5, 1, 0], "4 1", overlays);
-    connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-paev');
-  connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-kuu');
-  connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-aasta');
-  
-  var utDateToUtNp = createInstance([0.5, 58.25, -1, 0], [0.5, 58.25, -1, 0], "4 1");
-    connectElements(utDateToUtNp, 'ut-paev', 'ut-np');
-  connectElements(utDateToUtNp, 'ut-kuu', 'ut-np');
-  connectElements(utDateToUtNp, 'ut-aasta', 'ut-np');
-  
-  var instance4 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance4, 'li-riik', 'gk-riik');
-  
-  var instance5 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance5, 'li-hk', 'gk-hk');
-  
-  var instance6 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance6, 'li-selts', 'gk-selts');
-  
-  var instance7 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance7, 'li-sk', 'gk-sk');
-  
-  var instance8 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance8, 'li-pk', 'gk-pk');
-  
-  var instance9 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance9, 'li-klass', 'gk-klass');*/
-    
-});
-jsPlumb.ready(function() {
-    var instance = jsPlumb.getInstance();
-
-    instance.connect({
-        source: 'element1',  // id of the source element
-        target: 'element2',  // id of the target element
-        connector: ['Straight']  // use a straight line
-    });
-});
-
-
 /* author: kent Chang begins */
 class PRESTimeline {
   constructor(target, color) {
@@ -385,26 +260,37 @@ class PRESTimeline {
     }
 
     // ## cards
-    $(this.base)
-      .find(".cards-container section.active")
-      .removeClass("active")
-    $(this.base)
-      .find(".cards-container section.prev")
-      .removeClass("prev")
-    $(this.base)
-      .find(".cards-container section.next")
-      .removeClass("next")
-    $(this.activeCard).addClass("active")
-    // this.activeCardIndex - this.activeCard.index
-    if ($(this.activeCard).prev().length != 0) {
-      $(this.activeCard)
-        .prev()
-        .addClass("prev")
+        // Cache jQuery objects to avoid repeated DOM queries
+
+    var $base = $(this.base);
+    var $activeCard = $(this.activeCard);
+
+    // Use a single call to .find() and .removeClass() for efficiency
+    $base.find(".cards-container section.active, .cards-container section.prev, .cards-container section.next").removeClass("active prev next");
+
+    // Add 'active' class to the active card
+    $activeCard.addClass("active");
+
+    // Show the corresponding grid item
+    var cardIndex = $activeCard.data('card-index');
+    // Select the grid item from the entire document, not just within $base
+var $gridItem = $('.grid-item[data-grid-item-index="' + cardIndex + '"]');
+
+console.log($gridItem); // Log the grid item to the console
+
+$gridItem.removeClass('hidden');
+
+
+    // Add 'prev' class to the previous card if it exists
+    var $prevCard = $activeCard.prev();
+    if ($prevCard.length) {
+      $prevCard.addClass("prev");
     }
-    if ($(this.activeCard).next().length != 0) {
-      $(this.activeCard)
-        .next()
-        .addClass("next")
+
+    // Add 'next' class to the next card if it exists
+    var $nextCard = $activeCard.next();
+    if ($nextCard.length) {
+      $nextCard.addClass("next");
     }
 
     // ## timeline
@@ -625,3 +511,129 @@ $(document).ready(function() {
   let timeline = new PRESTimeline($("#this-timeline"), colorcode)
 })
 /* author: kent Chang ends */
+
+// JSPLUMB
+jsPlumb.ready(function() {
+    function createInstance(connector, sourceAnchor, targetAnchor, dashStyle, overlays) {
+        var instance = jsPlumb.getInstance({
+            Connector: connector,
+            PaintStyle: { strokeWidth: 2, stroke: 'black', dashstyle: dashStyle},
+            Endpoint: [ "Dot", { radius: 1 } ],
+            EndpointStyle: { fill: '#f00' },
+            Anchors: [sourceAnchor, targetAnchor],
+            Overlays: overlays
+        });
+
+        return instance;
+    }
+
+    function connectElements(instance, sourceId, targetId) {
+        instance.connect({ source: sourceId, target: targetId});
+    }
+  
+var flowchartConnector = ["Flowchart", { stub: 30, gap: 5, cornerRadius: 10, alwaysRespectStubs: true } ]
+
+var straightConnector = ['Straight']
+
+  
+  // Example usage:
+var overlays = [
+    [ "Arrow", { 
+        location: 1, 
+        id: "arrow", 
+        length: 14, 
+        foldback: 0.8 
+    } ]
+];
+
+  var lvElToUtEl = createInstance(straightConnector, [1, 0.5, 1, 0], [0, 0.4, -1, 0], "0 0", overlays);
+    connectElements(lvElToUtEl, 'lv-el', 'ut-el');
+  
+  /*var lvAuConnect = createInstance(straightConnector, [0.5, 1.25, 0, 0], [0.5, -0.25, 0, 0], "0 0");
+    connectElements(lvAuConnect, 'lv-el', 'au-el');*/
+  
+  var auToGk = createInstance(straightConnector, [1.15, 0.5, 1, 0], [0, 0.375, -1, 0], "0 0", overlays);
+    connectElements(auToGk, 'au-el', 'gk-el');
+  
+  var utToGk = createInstance(straightConnector, [0.65, 1.25, 0, 0], [0.45, -0.25, 0, 0], "0 0", overlays);
+    connectElements(utToGk, 'ut-el', 'gk-el');
+  
+  var lvToLa = createInstance(straightConnector, [1, 0.5, 1, 0], [0.05, 0.15, 0, 0], "0 0", overlays);
+    connectElements(lvToLa, 'lv-el', 'la-el');
+  
+  var laToUt = createInstance(flowchartConnector, [0.75, 0, 0, -1], [0, 0.65, -1, 0], "0 0", overlays);
+    connectElements(laToUt, 'la-el', 'ut-el');
+  
+    var liToLa = createInstance(flowchartConnector, [0.7, 0, 0, -1], [0.5, 0, 0, -1], "0 0", overlays);
+    connectElements(liToLa, 'li-el', 'la-el');
+  
+  var kkToLa = createInstance(flowchartConnector, [0, 0.5, -1, 0], [1, 0.5, 1, 0], "0 0", overlays);
+    connectElements(kkToLa, 'kk-el', 'la-el');
+  
+  var lvVkDivide = createInstance(flowchartConnector, [-0.15, 0.5, -1, 1], [-0.15, 0.5, -1, 0], "4 1", overlays);
+    connectElements(lvVkDivide, 'lv-vk', 'lv-mk');
+  connectElements(lvVkDivide, 'lv-vk', 'lv-ov');
+  connectElements(lvVkDivide, 'lv-vk', 'lv-au'); 
+  
+  /*var gbifToLi = createInstance([0, 0, 0, 0], [0, 0, 0, 0], "0 0", overlays);
+    connectElements(gbifToLi, 'gbif-api', 'li-el');*/
+  
+ /* var la2ToGBIF = createInstance([1.15, 0.5, 1, 0], [0, 0.5, -1, 0], "0 0", overlays);
+    connectElements(la2ToGBIF, 'la2-ek', 'grid-3-2');
+  
+  var instance11 = createInstance([1.1, 0.5, 1, 1], [-0.25, 0.5, 0, 0], "0 0", overlays);
+    connectElements(instance11, 'grid-3-2', 'li-title');
+  
+ var vikiAPITokk = createInstance([0.5, 0.5, 1, 0], [0.5, -1, 0, 0], "0 0", overlays);
+    connectElements(vikiAPITokk, 'grid-4-2', 'kk-title');
+  
+   var eElTokk = createInstance([-0.025, 0.5, 0, 0], [5, 0, 0, 0], "0 0", overlays);
+    connectElements(eElTokk, 'grid-5-2', 'la2-liik');
+  
+  var lvVkDivide = createInstance([-0.15, 0.5, -1, 0], [-0.15, 0.5, -1, 0], "4 1", overlays);
+    connectElements(lvVkDivide, 'lv-vk', 'lv-mk');
+  connectElements(lvVkDivide, 'lv-vk', 'lv-ov');
+  connectElements(lvVkDivide, 'lv-vk', 'lv-au');
+  
+  var lvLiiktoLa = createInstance([1.15, 0.5, 1, 0], [1.15, 0.5, 1, 0], "4 1", overlays);
+    connectElements(lvLiiktoLa, 'lv-liik', 'la-lk');
+  connectElements(lvLiiktoLa, 'lv-liik', 'la-ek');
+  
+  var lvAlgKpToGk = createInstance([1.15, 0.35, 1, 0], [1.15, 0.5, 1, 0], "4 1", overlays);
+    connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-paev');
+  connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-kuu');
+  connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-aasta');
+  
+  var utDateToUtNp = createInstance([0.5, 58.25, -1, 0], [0.5, 58.25, -1, 0], "4 1");
+    connectElements(utDateToUtNp, 'ut-paev', 'ut-np');
+  connectElements(utDateToUtNp, 'ut-kuu', 'ut-np');
+  connectElements(utDateToUtNp, 'ut-aasta', 'ut-np');
+  
+  var instance4 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
+    connectElements(instance4, 'li-riik', 'gk-riik');
+  
+  var instance5 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
+    connectElements(instance5, 'li-hk', 'gk-hk');
+  
+  var instance6 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
+    connectElements(instance6, 'li-selts', 'gk-selts');
+  
+  var instance7 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
+    connectElements(instance7, 'li-sk', 'gk-sk');
+  
+  var instance8 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
+    connectElements(instance8, 'li-pk', 'gk-pk');
+  
+  var instance9 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
+    connectElements(instance9, 'li-klass', 'gk-klass');*/
+    
+});
+/*jsPlumb.ready(function() {
+    var instance = jsPlumb.getInstance();
+
+    instance.connect({
+        source: 'element1',  // id of the source element
+        target: 'element2',  // id of the target element
+        connector: ['Straight']  // use a straight line
+    });
+});*/
