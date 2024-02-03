@@ -55,8 +55,8 @@ footer {
 }
 
 .swiper-pagination {
-  position: sticky;
-  top: 0; /* Adjust as needed */
+  position: absolute;
+  top: 20%; /* Adjust as needed */
   z-index: 1; /* Ensure the pagination is above other content */
   /* Add your other styles here */
 }
@@ -138,13 +138,15 @@ footer {
 }
 */
 
-.swiper-button-next, .swiper-button-prev {
-  color: red; /* Change the color of the buttons */
-  top: 50%; /* Position the buttons in the middle of the Swiper container */
+
+#swiper-nav-wrapper {
+  display: flex;
 }
 
-.swiper-pagination {
-  bottom: 10px; /* Position the pagination at the bottom of the Swiper container */
+.swiper-button-next, .swiper-button-prev {
+  color: red; /* Change the color of the buttons */
+  top: 20%; /* Position the buttons in the middle of the Swiper container */
+  margin: 25%;
 }
 
 
