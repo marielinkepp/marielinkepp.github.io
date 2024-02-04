@@ -26,20 +26,20 @@
 
     <main id="main" class="parallax">
         <h1>Loodusvaatluste andmebaasi kirjete analüüs</h1>
+
         <div class="swiper-container">
+            <!--The swiper navigation design is inspired by Connor Murphy's Grimes & Odesza InVision Studio design available on dribble.com-->
 
             <div id="swiper-nav-wrapper">
-                <!-- Navigation buttons -->
-                <div class="swiper-button-next"></div>
-
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-prev"></div>
-            </div>
+                <div id="slide-nr">1</div>
+                <div id="swiper-nav-grid"><div class="swiper-button-prev swiper-nav-grid-item"></div>
+              <h3 id="slide-title" class="swiper-nav-grid-item">Uurimisküsimused</h3>
+                <div class="swiper-button-next swiper-nav-grid-item"></div>
+                <div class="swiper-pagination swiper-nav-grid-item"></div></div>
+             </div>
             
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-slide-title="UURIMISKÜSIMUS">
                     
                     <div id="section-1" class="section">
                                 
@@ -70,8 +70,7 @@
                             
 
                 </div>
-
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-slide-title="LÄHTEANDMED">
                     
                     <div id="section-2" class="section">
       
@@ -129,8 +128,7 @@
 
                 </div>
 
-
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-slide-title="ANDMETÖÖTLUS">
                     <div id="section-3" class="section">
                         <div><h2>INTERAKTIIVNE ÜLEVAADE ANDMETÖÖTLUSPROTSESSIST</h2></div>
                         
@@ -740,8 +738,7 @@
                               </div>
                      </div>
                 </div>
-
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-slide-title="TULEMUSED">
                     <div id="section-4" class="section">
                         <button type="button" class="collapsible"><h2>4. Tulemused</h2></button>
                         <div id="section4" class="content">
@@ -839,13 +836,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-slide-title="KOKKUVÕTE">
                     <div id="section-5" class="section">
                         <button type="button" class="collapsible"><h2>5. Kokkuvõte</h2></button>
                         <div id="section5" class="content"></div>
                     </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-slide-title="ALLIKAD">
                     <div id="section-6" class="section"></div>
                 </div>
             </div>

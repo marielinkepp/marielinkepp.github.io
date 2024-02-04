@@ -26,14 +26,8 @@ function initSwiper() {
         // Enable pagination
         pagination: {
             el: '.swiper-pagination',
-        },
+        }
 
-        // Event handlers
-        /*on: {
-            slideChangeTransitionEnd: function() {
-                addSlideTransitionEffect();
-            },
-        },*/
     });
 }
 
@@ -45,8 +39,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Wait for the entire page to load before initializing the Swiper
     window.addEventListener('load', (event) => {
-        var swiper = initSwiper();
-    });
+      var swiper = initSwiper();
+
+      swiper.on('slideChange', function () {
+          var currentSlide = $(this.slides[this.activeIndex]);
+          var title = currentSlide.data('slide-title');
+        console.log(currentSlide.data())
+          $('#slide-title').text(title);
+        
+          var slideIndex = currentSlide.data('swiperSlideIndex');
+        $('#slide-nr').text(slideIndex + 1);
+      });
+  });
 
     // Select all elements with the class 'collapsible'
     var collapsibles = document.querySelectorAll('.collapsible');

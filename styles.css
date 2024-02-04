@@ -9,7 +9,7 @@ header {
   /*font-size: 1.5em; /* Make the text larger */
   position:sticky; 
   top:0;
-}
+  }
 
 footer {
   text-align: center; /* Center the text */
@@ -54,12 +54,7 @@ footer {
   display: none; /* Hide the nav element initially */
 }
 
-.swiper-pagination {
-  position: absolute;
-  top: 20%; /* Adjust as needed */
-  z-index: 1; /* Ensure the pagination is above other content */
-  /* Add your other styles here */
-}
+
 
 .parallax {
   /* The image used */
@@ -113,42 +108,6 @@ footer {
   grid-gap: 20px; /* This adds a 20px gap between grid items */
 }
 
-/*#content-1 {
-  background-color: blanchedalmond;
-}
-
-#content-2 {
-  background-color: thistle;
-}
-
-#section-1 {
-  text-align: left;
-}
-
-#section-3 {
-  background-color: lightcyan;
-}
-
-#section-4 {
-  background-color: lightgoldenrodyellow;
-}
-
-#section-5 {
-  background-color: lightgrey;
-}
-*/
-
-
-#swiper-nav-wrapper {
-  display: flex;
-  position:absolute;
-}
-
-.swiper-button-next, .swiper-button-prev {
-  color: red; /* Change the color of the buttons */
-  top: 20%; /* Position the buttons in the middle of the Swiper container */
-  margin: 25%;
-}
 
 
 .collapsible {
@@ -237,15 +196,6 @@ footer {
     100% { border: 2px solid rgba(0, 0, 0, 0); } /* End with a transparent border */
 }
 
-.grid-container2 {
-  display:grid;
-  position: relative;
-  user-select: auto;
-  padding: 0;
-  margin: 0;
-}
-
-
 svg circle {
   fill: transparent !important;
 }
@@ -256,23 +206,18 @@ svg circle {
   display:grid;
   grid-template-columns: auto auto auto auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto;
-  /*grid-gap: 20px;*/
   padding: 20px;
   overflow:scroll;
-  /*width:100vw;
-  height:100vh;*/
 }
 
 .grid-item {
   margin: 0;
   box-sizing: content-box;
   position: relative;
- /* transition: transform 0.5s;*/
   padding:20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /*border: 1px solid black;*/
   width:fit-content;
   height:fit-content;
 }
@@ -331,56 +276,12 @@ svg circle {
   grid-column: 6;
 }
 
-/*.grid-item:target {
-  transform: scale(1.1);
-}*/
-
-
-/*.grid-item:nth-child(1), .grid-item:nth-child(2) {
-  grid-row: 1;
-}
-.grid-item:nth-child(3) {
-  grid-row: 2;
-  grid-column: 5;
-}
-.grid-item:nth-child(4) {
-  grid-row: 3;
-  grid-column: 4;
-}
-
-.grid-item:nth-child(5) {
-  grid-row: 3;
-  grid-column: 5;
-}
-
-.grid-item:nth-child(6) {
-  grid-row: 4;
-  grid-column: 5;
-}
-
-.grid-item:nth-child(7) {
-  grid-row: 5;
-  grid-column: 1;
-}
-
-.grid-item:nth-child(8) {
-  grid-row: 5;
-}
-
-.grid-item:nth-child(1), .grid-item:nth-child(7) { 
-  grid-column: 1;
-}
-
-.grid-item:nth-child(2), .grid-item:nth-child(8) { 
-  grid-column: 6;
-}*/
 
 .line {
   stroke:rgb(255,0,0);
   stroke-width:20
    
 }
-
 
 
 .section-intro {
@@ -911,3 +812,75 @@ td {
   .cards-container section img {
     width: 100%; }
 /* author: kent Chang ends */
+
+
+/* SWIPER STYLES */
+
+#swiper-nav-wrapper {
+  flex-direction: row;
+}
+
+#swiper-nav-grid {
+  display:grid;
+  background: white;
+  position: absolute; /* Position the grid absolutely within the wrapper */
+    top: 50%; /* Center the grid vertically */
+    left: 50%; /* Center the grid horizontally */
+    transform: translate(-50%, -50%); /* Offset the grid by half its width and height to truly center it */
+
+}
+
+.swiper-nav-grid-item:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.swiper-nav-grid-item:nth-child(2) {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.swiper-nav-grid-item:nth-child(3) {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.swiper-nav-grid-item:nth-child(4) {
+  grid-row: 2;
+  grid-column: span 3;
+}
+
+.swiper-button-next, .swiper-button-prev, .swiper-pagination, #swiper-nav-wrapper, .swiper-wrapper {
+  position: relative !important;
+}
+
+.swiper-button-next {
+  background: url('media/svg/arrow-narrow-left-svgrepo-com.svg') no-repeat center;
+  margin-left: 40px !important;
+}
+
+.swiper-button-prev {
+  background: url('media/svg/arrow-narrow-left-svgrepo-com.svg') no-repeat center;
+  margin-right: 40px !important;
+}
+
+#slide-nr {
+  margin-left:20px;
+  font-size: 40px;
+}
+
+#swiper-nav-wrapper, .swiper-slide-content {
+  background: yellow;
+}
+
+.swiper-slide-content, footer {
+  justify-content: center;
+}
+
+#swiper-nav-wrapper, .swiper-slide-content, footer {
+  display:flex;
+}
+
+.swiper-container, #swiper-nav-wrapper, #swiper-nav-grid {
+  padding:20px;
+}
