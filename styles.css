@@ -141,6 +141,7 @@ footer {
 
 #swiper-nav-wrapper {
   display: flex;
+  position:absolute;
 }
 
 .swiper-button-next, .swiper-button-prev {

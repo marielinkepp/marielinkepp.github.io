@@ -74,14 +74,6 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-$(document).ready(function() {
-  if ($('th').is(':visible')) {
-    $('table').each(function() {
-      var color = $(this).data('bgcolor');
-      $(this).css('background', color);
-    });
-  }
-});
 
 document.addEventListener('DOMContentLoaded', function() {
   var tooltips = document.querySelectorAll('.tooltip');
@@ -146,13 +138,120 @@ document.body.addEventListener('mouseover', function(e) {
     }
 });
 
+/*jsPlumb schema builder*/
+
+function setupJsPlumb() {
+  var instance = jsPlumb.getInstance();
+
+  return instance;
+}
+
+// Function to draw connections
+function drawConnections(instance) {
+  
+  // Get all elements with the class 'grid-item'
+  var gridItems = document.querySelectorAll('.grid-item');
+
+  // Arrow overlay
+  var arrowOverlay = [
+    [ "Arrow", { 
+        location: 1, 
+        id: "arrow", 
+        length: 14, 
+        foldback: 0.8 
+    } ]
+  ];
+  
+  var flowchartConnector = ["Flowchart", { stub: 30, gap: 5, cornerRadius: 10, alwaysRespectStubs: true } ]
+  var straightConnector = ['Straight']
+
+  // Array of element IDs
+  var elementIds = [
+    { source: 'lv-el', target: 'la-el', connector: flowchartConnector, anchors: [[1, 0.25, 1, 0], [0.05, 0.5, -1, 0]], dashStyle: "0 0", drawn: false},
+    { source: 'gbif-api', target: 'li-el', connector: straightConnector, anchors: [[1.15, 0.5, 1, 0], [0.05, 0.3, -1, 0]], dashStyle: "0 0", drawn: false},
+    { source: 'wiki-api', target: 'ut-el', connector: flowchartConnector, anchors: [[0, 0.5, -1, 0], [0, 0.4, -1, 0]], dashStyle: "0 0", drawn: false},
+    { source: 'ee-api', target: 'ut-el', connector: flowchartConnector, anchors: [[1.15, 0.5, 1, 0], [0, 0.8, -1, 0]], dashStyle: "0 0", drawn: false},
+    { source: 'wiki-api', target: 'kk-el', connector: straightConnector, anchors: [[1.15, 0.5, 1, 0], [0, 0.4125, -1, 0]], dashStyle: "0 0", drawn: false},
+    { source: 'li-el', target: 'la-el', connector: flowchartConnector, anchors: [[0.5, 0, 0, -1], [0.85, 0, 0, -1]], dashStyle: "0 0", drawn: false},
+    { source: 'kk-el', target: 'la-el', connector: flowchartConnector, anchors: [[0, 0.65, -1, 0], [0.7, 0.8, 0, 1]], dashStyle: "0 0", drawn: false},
+    { source: 'la-el', target: 'ut-el', connector: flowchartConnector, anchors: [[0.75, 0, 0, -1], [0, 0.6, -1, 0]], dashStyle: "0 0", drawn: false},
+    { source: 'lv-el', target: 'ut-el', connector: straightConnector, anchors: [[1, 0.25, 1, 0], [-0.03, 0.2, -1, 0]], dashStyle: "0 0", drawn: false},
+    { source: 'ut-el', target: 'gk-el', connector: straightConnector, anchors: [[0.65, 0.95, 0, 0], [0.45, 0, 0, 0]], dashStyle: "0 0", drawn: false},
+    { source: 'au-el', target: 'gk-el', connector: straightConnector, anchors: [[1, 0.5, 1, 0], [0, 0.375, -1, 0]], dashStyle: "0 0", drawn: false} 
+  ];
+
+  /*// Loop over the element IDs and connect each instance
+  elementIds.forEach(function(ids) {
+    instance.connect({
+      source: ids.source,
+      target: ids.target,
+      connector: ids.connector,
+      overlays: arrowOverlay,
+      anchors: ids.anchors
+    });
+  });*/
+  // Loop over the element IDs and connect each instance
+  // Loop over the element IDs and connect each instance
+  elementIds.forEach(function(ids) {
+    var sourceElement = document.getElementById(ids.source);
+    var targetElement = document.getElementById(ids.target);
+
+    // Check if the connection has not been drawn and neither element has the 'hidden' class
+    if (!ids.drawn && !sourceElement.classList.contains('hidden') && !targetElement.classList.contains('hidden')) {
+      instance.connect({
+        source: ids.source,
+        target: ids.target,
+        connector: ids.connector,
+        overlays: arrowOverlay,
+        anchors: ids.anchors
+      });
+
+      // Mark the connection as drawn
+      ids.drawn = true;
+    }
+  });
+}
+
+
+function setupTableListeners(instance) {
+  var tables = document.querySelectorAll('.toggle-open');
+  tables.forEach(function(table) {
+    table.addEventListener('click', function() {
+      var tds = table.querySelectorAll('tbody tr td:not(.special-open)');
+      var isAnyTdVisible = Array.from(tds).some(function(td) {
+        return td.style.display !== "none";
+      });
+
+      // If any td is not visible, set the background color to white
+      if (!isAnyTdVisible) {
+        table.style.background = "white";
+      }
+
+      tds.forEach(function(td) {
+        if (td.style.display === "none") {
+          td.style.display = "table-cell";
+        } else {
+          td.style.display = "none";
+        }
+      });
+
+      // After the table has changed size, repaint the connections
+      instance.repaintEverything();
+    });
+  });
+}
+
+var instance = setupJsPlumb();
+setupTableListeners(instance);
+
 /* author: kent Chang begins */
 class PRESTimeline {
-  constructor(target, color) {
+  constructor(target, color, jsPlumbInstance) {
     // this.__process_stylesheet(document.styleSheets[0]);
 
     this.base = target
     this.color = color
+    this.jsPlumbInstance = jsPlumbInstance
     // console.log(this.color)
     this.periodContainer = $(this.base).find(".periods-container")
     this.cardContainer = $(this.base).find(".cards-container")
@@ -248,12 +347,12 @@ class PRESTimeline {
 
     // Show the corresponding grid item
     var cardIndex = $activeCard.data('card-index');
+
     // Select the grid item from the entire document, not just within $base
-var $gridItem = $('.grid-item[data-grid-item-index="' + cardIndex + '"]');
-
-
-$gridItem.removeClass('hidden');
-
+    var $gridItem = $('.grid-item[data-grid-item-index="' + cardIndex + '"]');
+    $gridItem.removeClass('hidden');
+    drawConnections(instance); // Redraw connections
+    instance.repaintEverything(); // Repaint the entire instance
 
     // Add 'prev' class to the previous card if it exists
     var $prevCard = $activeCard.prev();
@@ -270,9 +369,9 @@ $gridItem.removeClass('hidden');
     // ## timeline
     $(this.base)
       .find(".timeline li.active")
-      .removeClass("active")
+      .removeClass("active"); 
     // let findNode = $(this.base).find('.timeline ol li')[this.activeCard.index]
-    $(this.timelineData[this.activeCard.index]).addClass("active")
+    $(this.timelineData[this.activeCard.index]).addClass("active"); 
 
     let timelineB = $(this.base).find(".timeline-container .btn-back")
     let timelineN = $(this.base).find(".timeline-container .btn-next")
@@ -476,170 +575,20 @@ $gridItem.removeClass('hidden');
 // ## document load ##
 
 $(document).ready(function() {
+
+  if ($('th').is(':visible')) {
+    $('table').each(function() {
+      var color = $(this).data('bgcolor');
+      $(this).css('background', color);
+    });
+  }
+
   let colorcode = {
     period1: "#fec541",
     period2: "#ff9933",
     period3: "#36d484",
     period4: "#32ccf4"
   }
-  let timeline = new PRESTimeline($("#this-timeline"), colorcode)
+  let timeline = new PRESTimeline($("#this-timeline"), colorcode, instance)
 })
 /* author: kent Chang ends */
-
-
-
-/*jsPlumb schema builder*/
-
-function setupJsPlumb() {
-  var instance = jsPlumb.getInstance();
-
-  // Get all elements with the class 'grid-item'
-  var gridItems = document.querySelectorAll('.grid-item');
-
-  // Arrow overlay
-  var arrowOverlay = [
-    [ "Arrow", { 
-        location: 1, 
-        id: "arrow", 
-        length: 14, 
-        foldback: 0.8 
-    } ]
-  ];
-  
-  var flowchartConnector = ["Flowchart", { stub: 30, gap: 5, cornerRadius: 10, alwaysRespectStubs: true } ]
-
-var straightConnector = ['Straight']
-
-// Array of element IDs
-  var elementIds = [
-    { source: 'lv-el', target: 'ut-el', connector: straightConnector, anchors: [[1, 0.25, 1, 0], [-0.03, 0.2, -1, 0]], dashStyle: "0 0"},
-    { source: 'lv-el', target: 'la-el', connector: flowchartConnector, anchors: [[1, 0.25, 1, 0], [0.05, 0.5, -1, 0]], dashStyle: "0 0"},
-    { source: 'gbif-api', target: 'li-el', connector: straightConnector, anchors: [[1.15, 0.5, 1, 0], [0.05, 0.3, -1, 0]], dashStyle: "0 0"},
-    { source: 'wiki-api', target: 'ut-el', connector: flowchartConnector, anchors: [[0, 0.5, -1, 0], [0, 0.4, -1, 0]], dashStyle: "0 0"},
-    { source: 'ee-api', target: 'ut-el', connector: flowchartConnector, anchors: [[1.15, 0.5, 1, 0], [0, 0.8, -1, 0]], dashStyle: "0 0"},
-    { source: 'wiki-api', target: 'kk-el', connector: straightConnector, anchors: [[1.15, 0.5, 1, 0], [0, 0.4125, -1, 0]], dashStyle: "0 0"},
-    { source: 'li-el', target: 'la-el', connector: flowchartConnector, anchors: [[0.5, 0, 0, -1], [0.85, 0, 0, -1]], dashStyle: "0 0"},
-    { source: 'kk-el', target: 'la-el', connector: flowchartConnector, anchors: [[0, 0.65, -1, 0], [0.7, 0.8, 0, 1]], dashStyle: "0 0"},
-    { source: 'la-el', target: 'ut-el', connector: flowchartConnector, anchors: [[0.75, 0, 0, -1], [0, 0.6, -1, 0]], dashStyle: "0 0"},
-    { source: 'ut-el', target: 'gk-el', connector: straightConnector, anchors: [[0.65, 0.95, 0, 0], [0.45, 0, 0, 0]], dashStyle: "0 0"},
-    { source: 'au-el', target: 'gk-el', connector: straightConnector, anchors: [[1, 0.5, 1, 0], [0, 0.375, -1, 0]], dashStyle: "0 0"},
-   /* { source: 'lv-vk', target: 'lv-mk', connector: flowchartConnector, anchors: [[1.15, 0.5, 1, 0], [1.15, 0.5, 1, 0]], dashStyle: "4 1"},
-    { source: 'lv-vk', target: 'lv-ov', connector: flowchartConnector, anchors: [[1.15, 0.5, 1, 0], [1.15, 0.5, 1, 0]], dashStyle: "4 1"},
-    { source: 'lv-vk', target: 'lv-au', connector: flowchartConnector, anchors: [[1.15, 0.5, 1, 0], [1.15, 0.5, 1, 0]], dashStyle: "4 1"}*/
-    
-    // Add more element IDs here
-  ];
-
-  /*{ source: 'lv-vk', target: 'lv-ov', connector: flowchartConnector, anchors: [[-0.15, 0.5, -1, 1], [-0.15, 0.5, -1, 0]], dashStyle: "4 1"},
-    { source: 'lv-vk', target: 'lv-au', connector: flowchartConnector, anchors: [[-0.15, 0.5, -1, 0], [-0.15, 0.5, -1, 0]], dashStyle: "4 1"},*/
-  
-  // Loop over the element IDs and connect each instance
-  elementIds.forEach(function(ids) {
-    instance.connect({
-      source: ids.source,
-      target: ids.target,
-      connector: ids.connector,
-      overlays: arrowOverlay,
-      anchors: ids.anchors
-    });
-  });
-
-  // Return the instance
-  return instance;
-}
-
-// JSPLUMB
-  /*
- 
-  
-  
-  var lvVkDivide = createInstance(flowchartConnector, [-0.15, 0.5, -1, 1], [-0.15, 0.5, -1, 0], "4 1", overlays);
-    connectElements(lvVkDivide, 'lv-vk', 'lv-mk');
-  connectElements(lvVkDivide, 'lv-vk', 'lv-ov');
-  connectElements(lvVkDivide, 'lv-vk', 'lv-au'); 
-  
-  /*var gbifToLi = createInstance([0, 0, 0, 0], [0, 0, 0, 0], "0 0", overlays);
-    connectElements(gbifToLi, 'gbif-api', 'li-el');*/
-  
- /* var la2ToGBIF = createInstance([1.15, 0.5, 1, 0], [0, 0.5, -1, 0], "0 0", overlays);
-    connectElements(la2ToGBIF, 'la2-ek', 'grid-3-2');
-  
-  var instance11 = createInstance([1.1, 0.5, 1, 1], [-0.25, 0.5, 0, 0], "0 0", overlays);
-    connectElements(instance11, 'grid-3-2', 'li-title');
-  
- var vikiAPITokk = createInstance([0.5, 0.5, 1, 0], [0.5, -1, 0, 0], "0 0", overlays);
-    connectElements(vikiAPITokk, 'grid-4-2', 'kk-title');
-  
-   var eElTokk = createInstance([-0.025, 0.5, 0, 0], [5, 0, 0, 0], "0 0", overlays);
-    connectElements(eElTokk, 'grid-5-2', 'la2-liik');
-  
-  var lvVkDivide = createInstance([-0.15, 0.5, -1, 0], [-0.15, 0.5, -1, 0], "4 1", overlays);
-    connectElements(lvVkDivide, 'lv-vk', 'lv-mk');
-  connectElements(lvVkDivide, 'lv-vk', 'lv-ov');
-  connectElements(lvVkDivide, 'lv-vk', 'lv-au');
-  
-  var lvLiiktoLa = createInstance([1.15, 0.5, 1, 0], [1.15, 0.5, 1, 0], "4 1", overlays);
-    connectElements(lvLiiktoLa, 'lv-liik', 'la-lk');
-  connectElements(lvLiiktoLa, 'lv-liik', 'la-ek');
-  
-  var lvAlgKpToGk = createInstance([1.15, 0.35, 1, 0], [1.15, 0.5, 1, 0], "4 1", overlays);
-    connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-paev');
-  connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-kuu');
-  connectElements(lvAlgKpToGk, 'lv-alg-kp', 'ut-aasta');
-  
-  var utDateToUtNp = createInstance([0.5, 58.25, -1, 0], [0.5, 58.25, -1, 0], "4 1");
-    connectElements(utDateToUtNp, 'ut-paev', 'ut-np');
-  connectElements(utDateToUtNp, 'ut-kuu', 'ut-np');
-  connectElements(utDateToUtNp, 'ut-aasta', 'ut-np');
-  
-  var instance4 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance4, 'li-riik', 'gk-riik');
-  
-  var instance5 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance5, 'li-hk', 'gk-hk');
-  
-  var instance6 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance6, 'li-selts', 'gk-selts');
-  
-  var instance7 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance7, 'li-sk', 'gk-sk');
-  
-  var instance8 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance8, 'li-pk', 'gk-pk');
-  
-  var instance9 = createInstance([8.65, 15, 1, 0], [1.10, 0.5, 1, 0], "0 0", overlays);
-    connectElements(instance9, 'li-klass', 'gk-klass');*/
-    
-/*});*/
-
-
-function setupTableListeners(instance) {
-  var tables = document.querySelectorAll('.toggle-open');
-  tables.forEach(function(table) {
-    table.addEventListener('click', function() {
-      var tds = table.querySelectorAll('tbody tr td:not(.special-open)');
-      var isAnyTdVisible = Array.from(tds).some(function(td) {
-        return td.style.display !== "none";
-      });
-
-      // If any td is not visible, set the background color to white
-      if (!isAnyTdVisible) {
-        table.style.background = "white";
-      }
-
-      tds.forEach(function(td) {
-        if (td.style.display === "none") {
-          td.style.display = "table-cell";
-        } else {
-          td.style.display = "none";
-        }
-      });
-
-      // After the table has changed size, repaint the connections
-      instance.repaintEverything();
-    });
-  });
-}
-
-var instance = setupJsPlumb();
-setupTableListeners(instance);
