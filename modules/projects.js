@@ -227,9 +227,9 @@ function setupTableListeners(instance) {
       });
 
       // If any td is not visible, set the background color to white
-      if (!isAnyTdVisible) {
+      /*if (!isAnyTdVisible) {
         table.style.background = "white";
-      }
+      }*/
 
       tds.forEach(function(td) {
         if (td.style.display === "none") {
