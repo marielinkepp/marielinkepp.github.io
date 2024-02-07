@@ -43,32 +43,28 @@ export function handleLinkClick(nav, links) {
 export function handleCollapsibleClick(collapsibles) {
     for (let i = 0; i < collapsibles.length; i++) {
         collapsibles[i].addEventListener("click", function() {
-            // Close all section-content elements
-            /*var sections = document.getElementsByClassName("section-content");
-            for (var j = 0; j < sections.length; j++) {
-                sections[j].style.display = "none";
-            }*/
 
             // Open or close the content of the clicked collapsible
             this.classList.toggle("active");
-            var content = this.nextElementSibling;
+          
+          var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
             } else {
                 content.style.display = "block";
             }
-        });
+        })
     }
 }
 
 export function handleTabOpen(tabLinks) {
-    // Get all tab contents
-    var tabContents = Array.from(document.querySelectorAll('.tab-content'));
-
     tabLinks.forEach(tabLink => {
         tabLink.addEventListener('click', function() {
             var tabName = this.getAttribute('data-tab');
             var tabContent = document.getElementById(tabName);
+
+            // Get all tab contents
+            var tabContents = Array.from(document.querySelectorAll('.tabcontent'));
 
             // Hide all tab contents
             tabContents.forEach(content => content.style.display = "none");
