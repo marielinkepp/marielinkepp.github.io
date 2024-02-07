@@ -62,15 +62,19 @@ export function handleCollapsibleClick(collapsibles) {
 }
 
 export function handleTabOpen(tabLinks) {
+    // Get all tab contents
+    var tabContents = Array.from(document.querySelectorAll('.tab-content'));
+
     tabLinks.forEach(tabLink => {
         tabLink.addEventListener('click', function() {
             var tabName = this.getAttribute('data-tab');
             var tabContent = document.getElementById(tabName);
-            if (tabContent.style.display === "none") {
-                tabContent.style.display = "block";
-            } else {
-                tabContent.style.display = "none";
-            }
+
+            // Hide all tab contents
+            tabContents.forEach(content => content.style.display = "none");
+
+            // Display the clicked tab content
+            tabContent.style.display = "block";
         });
     });
 
