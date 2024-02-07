@@ -19,6 +19,10 @@ footer {
   float: left;
 }
 
+.left-ul {
+  text-align: left;
+}
+
 #nav-links ul {
   list-style-type: none; /* Remove the bullets */
   margin: 0; /* Remove the margins */
