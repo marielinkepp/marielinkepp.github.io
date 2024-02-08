@@ -79,68 +79,37 @@ footer {
   transition: background-position 0.5s ease-in-out;
 }
 
-.section {
-  padding: 20px;
-  background-color: blanchedalmond;
-  text-align: left;
-  box-sizing: border-box;
-  border: solid 5px transparent; /* Initial border */
-}
 
-.content {
-  padding: 20px;
-  background-color: #f8f9fa;
-  margin: 0;
-  /*font-size: 1em;*/
-  font-weight: bold;
-  text-align: center;
-}
-
-.section-content {
-  display: none;
-}
-
-.tab-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
-
-.grid-item {
-  padding: 20px;
-  text-align: left;
-  grid-gap: 20px; /* This adds a 20px gap between grid items */
-}
-
-
+/* COLLAPSIBE ELEMENT STYLES */
 
 .collapsible {
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    /*font-size: 15px;*/
-    margin-bottom: 10px; /* Adjust as needed */
-  }
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  /*font-size: 15px;*/
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.active, .collapsible:hover {
+  background-color: gainsboro;
+}
+
+.collapsible::before {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  /*font-size: 13px;*/
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
   
-  .active, .collapsible:hover {
-    background-color: gainsboro;
-  }
-  
-  .collapsible::before {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    /*font-size: 13px;*/
-    color: white;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .active::before {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-  }
+.active::before {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
 
   .section {
     padding: 20px;
@@ -161,14 +130,13 @@ footer {
   
   .collapsible-section{
     display: none; /* sections are hidden by default*/
+    background-color: white;
+    padding:20px;
   }
   
   .collapsible-section::active {
-    background: white;
-  }
-  
-  .section-content{
-    /*display: none; /* sections are hidden by default*/
+    background-color: white;
+
   }
   
   
@@ -185,34 +153,7 @@ footer {
   
   
   
-  .collapsible {
-      background-color: white;
-      color: black;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      /*font-size: 15px;*/
-      margin-bottom: 10px; /* Adjust as needed */
-    }
-    
-    .active, .collapsible:hover {
-      background-color: gainsboro;
-    }
-    
-    .collapsible::before {
-      content: '\02795'; /* Unicode character for "plus" sign (+) */
-      /*font-size: 13px;*/
-      color: white;
-      float: right;
-      margin-left: 5px;
-    }
-    
-    .active::before {
-      content: "\2796"; /* Unicode character for "minus" sign (-) */
-    }
+  
   
   
   /* Style the tab */
@@ -352,6 +293,7 @@ svg circle {
   stroke-width:20
    
 }
+
 
 
 .section-intro {
