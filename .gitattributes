@@ -1,1 +1,2 @@
 media/baaskaart.html filter=lfs diff=lfs merge=lfs -text
+media/kaart_aastad.html filter=lfs diff=lfs merge=lfs -text
