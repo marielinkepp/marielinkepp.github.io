@@ -853,7 +853,7 @@ td {
   position: relative !important;
 }
 
-/*.swiper-button-next {
+.swiper-button-next {
   background: url('media/svg/arrow-narrow-left-svgrepo-com.svg') no-repeat center;
   margin-left: 40px !important;
 }
@@ -861,7 +861,7 @@ td {
 .swiper-button-prev {
   background: url('media/svg/arrow-narrow-left-svgrepo-com.svg') no-repeat center;
   margin-right: 40px !important;
-}*/
+}
 
 #slide-nr {
   margin-left:20px;
