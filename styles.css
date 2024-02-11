@@ -850,12 +850,12 @@ td {
 }
 
 .swiper-button-next {
-  background: url('media/svg/arrow-narrow-left-svgrepo-com.svg') no-repeat center;
+  /*background: url('media/svg/arrow-narrow-left-svgrepo-com.svg') no-repeat center;*/
   margin-left: 40px !important;
 }
 
 .swiper-button-prev {
-  background: url('media/svg/arrow-narrow-left-svgrepo-com.svg') no-repeat center;
+  /*background: url('media/svg/arrow-narrow-left-svgrepo-com.svg') no-repeat center;*/
   margin-right: 40px !important;
 }
 
