@@ -946,7 +946,7 @@ grid-column: 2;
 }
 
 
-#grid-4-1-2 > div:nth-child(43 {
+#grid-4-1-2 > div:nth-child(3) {
   background-color: teal;
   grid-row:3;
   grid-column: span 2;
