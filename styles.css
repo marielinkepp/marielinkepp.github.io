@@ -1018,3 +1018,26 @@ grid-column: 2;
   align-self: flex-start;
   position: absolute;
 }
+
+.h3-style-span {
+  font-size: 24px; /* Adjusts the size of the text */
+  color: #333; /* Changes the text color */
+  font-weight: bold; /* Makes the text bold */
+  text-align: center; /* Centers the text */
+  margin-top: 30px; /* Adds space above the h3 */
+  margin-bottom: 30px; /* Adds space below the h3 */
+  font-family: 'Times New Roman', Times, serif; /* Changes the font */
+  line-height: 1.2; /* Adjusts the space between lines of text */
+
+}
+
+.h4-style-span {
+  font-size: 18px; /* Adjusts the size of the text */
+  color: #333; /* Changes the text color */
+  font-weight: bold; /* Makes the text bold */
+  text-align: center; /* Centers the text */
+  margin-top: 20px; /* Adds space above the h4 */
+  margin-bottom: 20px; /* Adds space below the h4 */
+  font-family: 'Times New Roman', Times, serif; /* Changes the font */
+  line-height: 1.2; /* Adjusts the space between lines of text */
+}
