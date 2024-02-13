@@ -900,117 +900,111 @@ grid-template-rows: auto auto auto;
 
 
 #grid-4-1 > div:nth-child(1) {
-background-color: yellow;
+background-color: #f5f5dc;
 grid-row: 1;
 grid-column: 1;
 }
 
 
 #grid-4-1 > div:nth-child(2) {
-background-color: red;
-grid-row:1;
-grid-column: 2;
+background-color: #dce9f5;
+grid-row:2;
+grid-column: 1;
 }
 
 
 #grid-4-3-1 > div:nth-child(1) {
-background-color: yellow;
+background-color: #f5f5dc;
 grid-row: 1;
 grid-column: span 2;
 }
 
 
 #grid-4-3-1 > div:nth-child(2) {
-background-color: red;
+background-color: #dce9f5;
 grid-row: 2;
 grid-column: 1;
 }
 
 #grid-4-3-1 > div:nth-child(3) {
-background-color: teal;
+background-color: #f5dcdd;
 grid-row:2;
 grid-column: 2;
 }
 
 #grid-4-1-2 > div:nth-child(1) {
-background-color: yellow;
+background-color: #f5f5dc;
 grid-row: 1;
-grid-column: 1;
+grid-column: span 2;
 }
 
 
 #grid-4-1-2 > div:nth-child(2) {
-background-color: red;
-grid-row:1 ;
-grid-column: 2;
+  background-color: #dce9f5;
+  grid-row:3;
+  grid-column: span 2;
 }
 
 
-#grid-4-1-2 > div:nth-child(3) {
-  background-color: teal;
-  grid-row:3;
-  grid-column: span 2;
-  }
-
 #grid-4-4-1 > div:nth-child(1) {
-background-color: yellow;
+background-color: #f5f5dc;
 grid-row: 1;
 grid-column: 1;
 }
 
 
 #grid-4-4-1 > div:nth-child(2) {
-background-color: red;
+background-color: #dce9f5;
 grid-row:1;
 grid-column: 2;
 }
 
 #grid-4-4-1 > div:nth-child(3) {
-background-color: teal;
+background-color: #dce9f5;
 grid-row:2;
 grid-column: 1;
 }
 
 #grid-4-4-1 > div:nth-child(4) {
-background-color: aquamarine;
+background-color: #f5f5dc;
 grid-row:2;
 grid-column: 2;
 }
 
 #grid-4-4-1 > div:nth-child(5) {
-background-color: yellow;
+background-color: #dce9f5;
 grid-row: 3;
 grid-column: 1;
 }
 
 
 #grid-4-4-1 > div:nth-child(6) {
-background-color: red;
+background-color: #dce9f5;
 grid-row:3;
 grid-column: 2;
 }
 
 #grid-4-4-1 > div:nth-child(7) {
-background-color: teal;
+background-color: #f5f5dc;
 grid-row:4;
 grid-column: 1;
 }
 
 #grid-4-4-1 > div:nth-child(8) {
-background-color: aquamarine;
+background-color: #dce9f5;
 grid-row:4;
 grid-column: 2;
 }
 
 #grid-4-4-2 > div:nth-child(1) {
-background-color: yellow;
+background-color: #f5f5dc;
 grid-row: 1;
 grid-column: 1;
 }
 
 
 #grid-4-4-2 > div:nth-child(2) {
-background-color: red;
+background-color: #dce9f5;
 grid-row:1;
 grid-column: 2;
 }
