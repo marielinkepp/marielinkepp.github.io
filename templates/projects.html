@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="et">
 <head>
     <meta charset="utf-8">
     <title>Marielin Kepp – Projektide leht</title>
@@ -45,7 +45,7 @@
                                 
                                 <!--<div class="slide-in-text"><h2>Uurimisküsimus</h2></div>-->
                                 <p>Käesoleva töö eesmärgiks oli uurida muutusi loodusvaatluste sisestamises vahemikus 2000-2023.</p>
-                                <button type="button" class="collapsible"><p>Püstitatud on järgmised algsed hüpoteesid:</p></button>
+                                <button type="button" class="collapsible"><span>Püstitatud on järgmised algsed hüpoteesid:</span></button>
                                 <div class="section-content">
                                     <ul>
                                         <li>H1: Loodusvaatluste sisestamine on aastate vältel järjest suurenenud</li>
@@ -55,7 +55,7 @@
                                     </ul>
                                 </div>
                                 <br>
-                                <button type="button" class="collapsible"><p>Eesmärgist lähtuvalt on püstitatud järgmised uurimisküsimused:</p></button>
+                                <button type="button" class="collapsible"><span>Eesmärgist lähtuvalt on püstitatud järgmised uurimisküsimused:</span></button>
                                 <div class="section-content">
                                     <ul>
                                         <li>K1: Kas loodusvaatluste sisestamine on aastate vältel järjest suurenenud?</li>
@@ -77,9 +77,9 @@
                                 <!--<div class="slide-in-text"><h2>Lähteandmed</h2></div>-->
                             
                                 <p>Töös on kasutatud kolme põhiandmestikku.</p>
-                                <a href="https://lva.keskkonnainfo.ee"><p>1. Loodusvaatluste andmebaasi</a> kõik sisestatud kirjed. Fail on .csv-formaadis.</p>
+                                <a href="https://lva.keskkonnainfo.ee"><p>1. Loodusvaatluste andmebaasi</p></a> kõik sisestatud kirjed. Fail on .csv-formaadis.
                         
-                                    <button type="button" class="collapsible"><p>Tabelites on järgmised veerud:</p></button>
+                                    <button type="button" class="collapsible"><span>Tabelites on järgmised veerud:</span></button>
                                     <div class="section-content">
                                         <ul>
                                             <li><strong>Alg kp</strong>: kujul <em>pp.kk.aaaa</em></li>
@@ -93,7 +93,7 @@
                                     <p><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html"> Maakondade ruumiinfo</a> .shp-formaadis, koordinaatide referentssüsteem EPSG:3301</p>
                                     <p><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html"> sustusjaotuse ruumiinfo</a>.shp-formaadis, koordinaatide referentssüsteem EPSG:3301</p>
                                     
-                                    <button type="button" class="collapsible"><p>Tabelites on järgmised veerud:</p></button>
+                                    <button type="button" class="collapsible"><span>Tabelites on järgmised veerud:</span></button>
                                     <div class="section-content">
                                         <li>
                                             <ul>
@@ -170,7 +170,7 @@
                                 <div class="cards-container">
                                   <section id="lv-card" class="card-single active" period="period1" data-card-index="1">
                                     <div class="year">
-                                      <h1>1. ANDMESTIKE ALGTÖÖTLUS</h1> 
+                                      <h2>1. ANDMESTIKE ALGTÖÖTLUS</h2> 
                                       <h3>LOODUSVAATLUSTE TABEL</h3>
                                     </div>
                                     <div class="content">
@@ -178,23 +178,23 @@
                                       <p>Esmalt töötlesin loodusvaatluste tabeli algkuju, eemaldades kõik ebasobivad kirjed ja teisendades olemasolevad sobivamale kujule.</p>
                                       
                                     </div>
-                                    <button class="button-52" role="button" data-table-id="lv-0">1.1</button>
+                                    <button class="button-52" data-table-id="lv-0">1.1</button>
                                   </section>
                                  
                                   <section id="au-card" class="card-single" period="period2" data-card-index="2">
                                     <div class="year">
-                                      <h1>1. ANDMESTIKE ALGTÖÖTLUS</h1> 
+                                      <h2>1. ANDMESTIKE ALGTÖÖTLUS</h2> 
                                       <h3>ASUSTUSÜKSUSTE TABEL</h3>
                                     </div>
                                     <div class="content">
                                       <p>Tabelisse jäid alles ainult loodusvaatluste tabeliga ühtivad asustusüksused ja omavalitsused.</p>
                                     </div>
-                                    <button class="button-52" role="button" data-table-id="au">1.2</button>
+                                    <button class="button-52" data-table-id="au">1.2</button>
                                   </section>
                                   
                                   <section id="la-card" class="card-single" period="period1" data-card-index="3">
                                     <div class="year">
-                                      <h1>2. LIIKIDE KOHTA LISAINFO LEIDMINE</h1> 
+                                      <h2>2. LIIKIDE KOHTA LISAINFO LEIDMINE</h2> 
                                       <h3>LIIKIDE ARVUDE TABEL</h3>
                                     </div>
                                     
@@ -202,50 +202,51 @@
                                       <p>Algkujul tabelis oli olemas ainult ladina- ja eestikeelne liiginimi. Lõin uue tabeli, et leida liikide esinemissagedused ja iga liigi isendi kohta taksonoomilised andmed lisada.</p>
                                                                     <p>Lõin loodusvaatluste tabeli põhjal uue tabeli, kus olid liigid koos esinemissagedustega <em>(COUNT operatsioon 'Liik' veerul)</em> ning sorteerisin selle kahanevas järjekorras. Lõin liiginime veeru põhjal eraldi veerud ladina- ja eestikeelse nime jaoks.</p>
                                     </div>
-                                    <button class="button-52" role="button" data-table-id="la1">2.1</button>
+                                    <button class="button-52" data-table-id="la1">2.1</button>
                                   </section>
                                   
                                   <section id="li-card" class="card-single" period="period3" data-card-index="4">
                                     <div class="year">
-                                      <h1>2. LIIKIDE KOHTA LISAINFO LEIDMINE</h1> 
+                                      <h2>2. LIIKIDE KOHTA LISAINFO LEIDMINE</h2> 
                                       <h3>LIIKIDE INFO TABEL</h3>
                                     </div>
                                     <div class="content">
                                       <p>Kasutasin Maailma elurikkuse andmeportaali (Global Biodiversity Information Facility e. GBIF) API-d <em>(vt. funktsiooni liigi_info_paring)</em> ning tegin iga ladinakeelse liiginime kohta päringu. Salvestasin vahetulemuse csv-faili (liikide_arvud_infoga), et protsessi kordama ei peaks.</p>
                                       <span class="tooltiptext right">
-                                                                    <h5>Andmebaasist tagastati iga liigi kohta sõnastik järgmisel kujul infoga (näitena toodud rebane e. päring Vulpes Vulpes):</h5><ul>
-                                                                                <li>'usageKey': 5219243</li>
-                                                                                <li>'scientificName': 'Vulpes vulpes (Linnaeus, 1758)'</li>
-                                                                                <li>'canonicalName': 'Vulpes vulpes'</li>
-                                                                                <li>'rank': 'SPECIES'</li>
-                                                                                <li>'status': 'ACCEPTED'</li>
-                                                                                <li>'confidence': 99</li>
-                                                                                <li>'matchType': 'EXACT'</li>
-                                                                                <li><span style="color: green;">'kingdom (riik)': 'Animalia'</span></li>
-                                                                                <li><span style="color: green;">'phylum (hõimkond)': 'Chordata'</span></li>
-                                                                                <li><span style="color: green;">'order (selts)': 'Carnivora'</span></li>
-                                                                                <li><span style="color: green;">'family (sugukond)': 'Canidae'</span></li>
-                                                                                <li><span style="color: green;">'genus (perekond)': 'Vulpes'</span></li>
-                                                                                <li>'species': 'Vulpes vulpes'</li>
-                                                                                <li>'kingdomKey': 1</li>
-                                                                                <li>'phylumKey': 44</li>
-                                                                                <li>'classKey': 359</li>
-                                                                                <li>'orderKey': 732</li>
-                                                                                <li>'familyKey': 9701</li>
-                                                                                <li>'genusKey': 5219234</li>
-                                                                                <li>'speciesKey': 5219243</li>
-                                                                                <li>'synonym': False</li>
-                                                                                <li><span style="color: green;">'class (klass)': 'Mammalia'</span></li>
-                                                                            </ul>
-                                                                            <em>Rohelisega on märgitud kirjed, mida oma andmetabelis kasutan. Neile on lisatud ka eestikeelsed tõlekd, mille järgmises sammus lisasin.</em>                          
-                                                                        </span>
+                                        <span>Andmebaasist tagastati iga liigi kohta sõnastik järgmisel kujul infoga (näitena toodud rebane e. päring Vulpes Vulpes):</span>
+                                            <ul>
+                                              <li>'usageKey': 5219243</li>
+                                              <li>'scientificName': 'Vulpes vulpes (Linnaeus, 1758)'</li>
+                                              <li>'canonicalName': 'Vulpes vulpes'</li>
+                                              <li>'rank': 'SPECIES'</li>
+                                              <li>'status': 'ACCEPTED'</li>
+                                              <li>'confidence': 99</li>
+                                              <li>'matchType': 'EXACT'</li>
+                                              <li><span style="color: green;">'kingdom (riik)': 'Animalia'</span></li>
+                                              <li><span style="color: green;">'phylum (hõimkond)': 'Chordata'</span></li>
+                                              <li><span style="color: green;">'order (selts)': 'Carnivora'</span></li>
+                                              <li><span style="color: green;">'family (sugukond)': 'Canidae'</span></li>
+                                              <li><span style="color: green;">'genus (perekond)': 'Vulpes'</span></li>
+                                              <li>'species': 'Vulpes vulpes'</li>
+                                              <li>'kingdomKey': 1</li>
+                                              <li>'phylumKey': 44</li>
+                                              <li>'classKey': 359</li>
+                                              <li>'orderKey': 732</li>
+                                              <li>'familyKey': 9701</li>
+                                              <li>'genusKey': 5219234</li>
+                                              <li>'speciesKey': 5219243</li>
+                                              <li>'synonym': False</li>
+                                              <li><span style="color: green;">'class (klass)': 'Mammalia'</span></li>
+                                          </ul>
+                                          <em>Rohelisega on märgitud kirjed, mida oma andmetabelis kasutan. Neile on lisatud ka eestikeelsed tõlekd, mille järgmises sammus lisasin.</em>                          
+                                        </span>
                                     </div>
-                                    <button class="button-52" role="button">2.2</button>
+                                    <button class="button-52">2.2</button>
                                   </section>
                                   
                                   <section id="kk-card" class="card-single" period="period4" data-card-index="5">
                                     <div class="year">
-                                      <h1>2. LIIKIDE KOHTA LISAINFO LEIDMINE</h1> 
+                                      <h2>2. LIIKIDE KOHTA LISAINFO LEIDMINE</h2> 
                                       <h3>KAITSEKATEGOORIATE TABEL</h3>
                                     </div>
                                     <div class="content">
@@ -257,12 +258,12 @@
                                                                                 <li>täpsustus (liik)</li>
                                                                             </ul>
                                     </div>
-                                    <button class="button-52" role="button" data-table-id="kk">2.3</button>
+                                    <button class="button-52" data-table-id="kk">2.3</button>
                                   </section>
                                   
                                   <section id="ut-card" class="card-single" period="period1" data-card-index="6">
                                     <div class="year">
-                                      <h1>3. ANDMETABELITE ÜHENDAMINE, GEOKODEERIMINE</h1> 
+                                      <h2>3. ANDMETABELITE ÜHENDAMINE, GEOKODEERIMINE</h2> 
                                       <h3>ÜHENDTABEL</h3>
                                     </div>
                                     <div class="content">
@@ -327,12 +328,12 @@
                                                                         <li>Obrium cantharinum</li>
                                                                         </ul>
                                     </div>
-                                    <button class="button-52" role="button" data-table-id="ut">3.1</button>
+                                    <button class="button-52" data-table-id="ut">3.1</button>
                                   </section>
                                   
                                   <section id="gk-card" class="card-single" period="period1" data-card-index="7">
                                     <div class="year">
-                                      <h1>3. ANDMETABELITE ÜHENDAMINE, GEOKODEERIMINE</h1> 
+                                      <h2>3. ANDMETABELITE ÜHENDAMINE, GEOKODEERIMINE</h2> 
                                       <h3>GEOKODEERITUD TABEL</h3>
                                     </div>
                                     <div class="content">
@@ -351,7 +352,7 @@
                             
                             <p>Probleem on ülalpool lahendatud (vt 3.1).</p>
                                     </div>
-                                    <button class="button-52" role="button" data-table-id="gk">3.2</button> 
+                                    <button class="button-52" data-table-id="gk">3.2</button> 
                                   </section>
                                 </div>
                             <!--   </div> -->
@@ -368,19 +369,19 @@
                                 <table id="lv-0" class="grid-table-container toggle-open" data-bgcolor="#ffffcc">
                                     <tr>
                                     <th class="tooltip">LOODUSVAATLUSED 
-                                    <span class="tooltiptext right"><p></p></span> </th>
+                                    <span class="tooltiptext right"></span></th>
                                     </tr>
                                     <tr>
-                                    <td id="lv-alg-kp" class="tooltip"> Alg kp <span class="tooltiptext right"><p>Asendasin kõik tühikud punktidega <em>(nt 26.11 2023 → 26.11.2023)</em>; eemaldan tühjad veerud</p></span></td>
+                                    <td id="lv-alg-kp" class="tooltip"> Alg kp <span class="tooltiptext right">Asendasin kõik tühikud punktidega <em>(nt 26.11 2023 → 26.11.2023)</em>; eemaldan tühjad veerud</span></td>
                                     </tr>
                                     <tr>
-                                    <td id="lv-liik" class="tooltip"> Liik <span class="tooltiptext right"><p>Eemaldan tühjad veerud</p></span></td>
+                                    <td id="lv-liik" class="tooltip"> Liik <span class="tooltiptext right"><span>Eemaldan tühjad veerud</span></span></td>
                                     </tr>
                                     <tr>
                                     <td>Arv</td>
                                     </tr>
                                     <tr>
-                                    <td id="lv-vk" class="tooltip" data-target-ids="lv-mk,lv-ov,lv-au"> Vaatluskoht <span class="tooltiptext right"><p>Loon veeru 'Vaatluskoht' põhjal uued veerud 'Maakond', 'Omavalitsus' ja 'Asustusüksus'; Teisendan loodusvaatluse ja ansustusülksuste tabelites mõlemas tabelis veerud (maakond, omavalitsus, ausustüksus) sõnedeks (igaks juhuks) ja eemaldan tühikud</p></span></td>
+                                    <td id="lv-vk" class="tooltip" data-target-ids="lv-mk,lv-ov,lv-au"> Vaatluskoht <span class="tooltiptext right">Loon veeru 'Vaatluskoht' põhjal uued veerud 'Maakond', 'Omavalitsus' ja 'Asustusüksus'; Teisendan loodusvaatluse ja ansustusülksuste tabelites mõlemas tabelis veerud (maakond, omavalitsus, ausustüksus) sõnedeks (igaks juhuks) ja eemaldan tühikud</span></td>
                                     </tr>
                                     <tr>
                                     <td>Staatus</td>
@@ -392,7 +393,7 @@
                                     <td id="lv-ov" class="special-open extracted">Omavalitsus</td>
                                     </tr>
                                     <tr>
-                                    <td id="lv-au" class="special-open tooltip extracted"> Asustusüksus <span class="tooltiptext right"><p>Eemaldasin kõik "...küla küla" kujul olevatest nimedest teise "küla"</p></span></td>
+                                    <td id="lv-au" class="special-open tooltip extracted"> Asustusüksus <span class="tooltiptext right">Eemaldasin kõik "...küla küla" kujul olevatest nimedest teise "küla"</span></td>
                                     
                                     </tr>
                                 </table> 
@@ -477,7 +478,7 @@
                               
                             <div id="li-el" class="grid-item table toggle-open hidden" data-grid-item-index="4">
                                <div>
-                                    <table id="LIIGI INFO" class="grid-table-container" data-bgcolor="#ccff99">
+                                    <table id="li" class="grid-table-container" data-bgcolor="#ccff99">
                                         <tr>
                                         <th id="li-title" class="tooltip">LIIGI INFO 
                                         <span class="tooltiptext right"></span> </th>
@@ -561,7 +562,7 @@
                                     <span class="tooltiptext right"></span> </th>
                                     </tr>
                                     <tr>
-                                    <td id="la-liik" class="tooltip"> Liik <span class="tooltiptext right"><p>Mõnes reas oli liiginimi määramata, täiendasin andmetabelit käsitsi.</p></span></td>
+                                    <td id="la-liik" class="tooltip"> Liik <span class="tooltiptext right">Mõnes reas oli liiginimi määramata, täiendasin andmetabelit käsitsi.</span></td>
                                     </tr>
                                     <tr>
                                     <td>Arv</td>
@@ -570,7 +571,7 @@
                                     <td class="special-open extracted">Ladinakeelne nimetus</td>
                                     </tr>
                                     <tr>
-                                    <td class="special-open extracted tooltip"> Eestikeelne nimetus <span class="tooltiptext right"><p>Mõnes reas polnud eestikeelset nimetust</p></span></td>
+                                    <td class="special-open extracted tooltip"> Eestikeelne nimetus <span class="tooltiptext right">Mõnes reas polnud eestikeelset nimetust</span></td>
                                     </tr>
                                     <tr>
                                     <td>Liigi info</td>
@@ -616,10 +617,10 @@
                                     <table id="au" class="grid-table-container" data-bgcolor="#ffcc99">
                                         <tr>
                                         <th class="tooltip">ASUSTUSÜKSUSED 
-                                        <span class="tooltiptext left"><p>Tabelisse jäid alles ainult loodusvaatluste tabeliga ühtivad asustusüksused ja omavalitsused.</p></span> </th>
+                                        <span class="tooltiptext left">Tabelisse jäid alles ainult loodusvaatluste tabeliga ühtivad asustusüksused ja omavalitsused.</span> </th>
                                         </tr>
                                         <tr>
-                                        <td class="tooltip"> ANIMI <span class="tooltiptext right"><p>Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</p></span></td>
+                                        <td class="tooltip"> ANIMI <span class="tooltiptext right">Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</span></td>
                                         </tr>
                                         <tr>
                                         <td>AKOOD</td>
@@ -628,13 +629,13 @@
                                         <td>TYYP</td>
                                         </tr>
                                         <tr>
-                                        <td class="tooltip"> ONIMI <span class="tooltiptext right"><p>Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</p></span></td>
+                                        <td class="tooltip"> ONIMI <span class="tooltiptext right">Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</span></td>
                                         </tr>
                                         <tr>
                                         <td>OKOOD</td>
                                         </tr>
                                         <tr>
-                                        <td class="tooltip"> MNIMI <span class="tooltiptext right"><p>Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</p></span></td>
+                                        <td class="tooltip"> MNIMI <span class="tooltiptext right">Teisendan veeru sisu sõnedeks ja eemaldan tühikud.</span></td>
                                         </tr>
                                         <tr>
                                         <td>MKOOD</td>
@@ -722,7 +723,6 @@
                                         <td id="gk-au-mkood">MKOOD</td>
                                         </tr>
                                         <tr>
-                                        <tr>
                                         <td id="gk-au-pkood" class="extracted">PKOOD</td>
                                         </tr>
                                         <tr>
@@ -748,32 +748,35 @@
                       
                         <p>Järgnevates alajaotistes on joonised. Lõin kaardi, millel on kiht iga ...</p>
                         <button type="button" class="collapsible">
-                          <h3>Baaskaart</h3>
+                          <span style="font-size: 20px">Baaskaart</span>
                         </button>
                         <section id="section4-0" class="section-content">
-                          <iframe width="100%" height="300" src="media/baaskaart.html" frameborder="0" allowfullscreen></iframe>
+                          <iframe width="1000" height="300" src="media/baaskaart.html" style="border: none;" allowfullscreen></iframe>
                         </section>
                       
                         <p>Loodusvaatluste sisestamine on aastate jooksul kasvanud, kuid kasv pole olnud lineaarne.</p>
                         <p>aaaa</p>
                         <button type="button" class="collapsible">
-                          <h3>4.1 Loodusvaatluste erinevused aastate lõikes</h3>
+                          <span style="font-size: 20px;">4.1 Loodusvaatluste erinevused aastate lõikes</span>
                         </button>
 
                         <section id="section4-1" class="collapsible-section">
     
-                          <div class="section-content">
-                              <div class="tab">
-                                <button data-tab="Tab1" class="tablinks">
-                                  <h4>Ülevaade muutustest aastate lõikes</h4>
-                                </button>
-                                <button data-tab="Tab2" class="tablinks">
-                                  <h4>Vaatluste maakondlik jaotus aastate lõikes</h4>
-                                </button>
-                              </div>
-                      
-                              <div id="Tab1" class="tabcontent"><div id="grid-4-1" class="tab-grid">
-                            
+                            <div class="section-content">
+
+                            <div class="tab">
+                              <button data-tab="Tab1" class="tablinks">
+                                <span style="font-size: 18px">Ülevaade muutustest aastate lõikes</span>
+                              </button>
+                              <button data-tab="Tab2" class="tablinks">
+                                <span style="font-size: 18px">Vaatluste maakondlik jaotus aastate lõikes</span>
+                              </button>
+                            </div>
+
+                            <div id="Tab1" class="tabcontent">
+                              
+                              <div id="grid-4-1" class="tab-grid">
+                          
                                 <div class="grid-item">
                                   <p>Sissekanded võib üldistades jagada viieks perioodiks:</p>
                                   <ul class="left-ul">
@@ -787,34 +790,38 @@
                                 
                                 <div class="grid-item">
                                   <!--<h5>Vaatluste kasv reaalkasvuga</h5>-->
-                                  <iframe src="../media/plots/vaatluste_kasv.html" width="100%" height="600" frameborder="0"></iframe>
+                                  <iframe src="../media/plots/vaatluste_kasv.html" width="1000" height="600" style="border: none;"></iframe>
                                 </div>
                               </div>
+                            </div>
 
-                      
-                              <div id="Tab2" class="tabcontent"><div id="grid-4-1-2" class="tab-grid">
-                  
+                            <div id="Tab2" class="tabcontent">
+                              
+                              <div id="grid-4-1-2" class="tab-grid">
+                
                                 <div class="grid-item">child1</div>
           
                                 <div class="grid-item">
                                   <!--<h5>Vaatluste jaotus maakondade lõikes kokku</h5>-->
-                                  <iframe src="../media/plots/vaatlused_aastate_loikes_maakonnad.html" width="100%" height="600" frameborder="0"></iframe>
+                                  <iframe src="../media/plots/vaatlused_aastate_loikes_maakonnad.html" width="1000" height="600" style="border: none;"></iframe>
                                 </div>
                                 <div class="grid-item">
                                   <!--<h5>vaatluste jaotus aastate ja maakondade lõikes</h5>-->
-                                  <iframe src="../media/plots/map_4_1.html" width="100%" height="600" frameborder="0"></iframe>
+                                  <iframe src="../media/plots/map_4_1.html" width="1000" height="600" style="border: none;"></iframe>
                                 </div>
-                              
+                            
                               </div>
 
+                            </div>
+                          
                           </div>
-                
+                        
                         </section>
                       
                         <p>a</p>
                         <p>aaaa</p>
                         <button type="button" class="collapsible">
-                          <h3>4.2 Loodusvaatluste erinevused periooditi</h3>
+                          <span style="font-size: 20px">4.2 Loodusvaatluste erinevused periooditi</span>
                         </button>
                       
                         <section id="section4-2" class="collapsible-section">
@@ -822,37 +829,37 @@
                           <div>
                             <div class="tab">
                               <button data-tab="Tab3" class="tablinks">
-                                <h4>Kuu päevad</h4>
+                                <span style="font-size: 18px">Kuu päevad</span>
                               </button>
                               <button data-tab="Tab4" class="tablinks">
-                                <h4>Nädalapäevad</h4>
+                                <span style="font-size: 18px">Nädalapäevad</span>
                               </button>
                               <button data-tab="Tab5" class="tablinks">
-                                <h4>Pühad</h4>
+                                <span style="font-size: 18px;">Pühad</span>
                               </button>
                               <button data-tab="Tab6" class="tablinks">
-                                <h4>Kuud</h4>
+                                <span style="font-size: 18px">Kuud</span>
                               </button>
                             </div>
                       
                             <div id="Tab3" class="tabcontent">
                               <p>Kuupäevade lõikes ei tundu ühtegi mustrit ilmnevat. Võib järeldada, et kuu lõikes ei ole vaatlusi mõjutavaid faktoreid.</p>
-                              <iframe src="../media/plots/month_days.html" width="100%" height="600" frameborder="0"></iframe>
+                              <iframe src="../media/plots/month_days.html" width="1000" height="600" style="border: none;"></iframe>
                             </div>
                       
                             <div id="Tab4" class="tabcontent">
                               <p>Vaatlusi on rohkem nädala lõpus ning kõige rohkem laupäeval.</p>
-                              <iframe src="../media/plots/nadalapaevad.html" width="100%" height="600" frameborder="0"></iframe>
+                              <iframe src="../media/plots/nadalapaevad.html" width="1000" height="600" style="border: none;"></iframe>
                             </div>
                       
                             <div id="Tab5" class="tabcontent">
                               <p>Loodusvaatlusi on kõige rohkem kevad-suvistel pühadel: suurel reedel (22), võidupüha (15), jaanipäev (10), ülestõusmispüha 1. püha (11), kevadpüha (8), nelipühade 1. püha (3). Mõned vaatlused sisestati ka aasta lõpus (jõulud ja aastavahetus), kuid vähese arvu tõttu pole võimalik üldistusi teha.</p>
-                              <iframe src="../media/plots/puhad_jaotus_kaart_barplotiga.html" width="100%" height="600" frameborder="0"></iframe>
+                              <iframe src="../media/plots/puhad_jaotus_kaart_barplotiga.html" width="1000" height="600" style="border: none;"></iframe>
                             </div>
                       
                             <div id="Tab6" class="tabcontent">
                               <p>Vaatlusi sisestatakse kõige rohkem hiliskevadel (aprill, mai) ja suvel (juuni, juuli, august).</p>
-                              <iframe src="../media/plots/nadalapaev_kuu.html" width="100%" height="600" frameborder="0"></iframe>
+                              <iframe src="../media/plots/nadalapaev_kuu.html" width="1000" height="600" style="border: none;"></iframe>
                             </div>
                           </div>
                           </div></section>
@@ -860,16 +867,16 @@
                         <p>a</p>
                         <p>aaaa</p>
                           <button type="button" class="collapsible">
-                            <h3>4.3 Loodusvaatluste erinevused maakonniti</h3>
+                            <span style="font-size: 20px">4.3 Loodusvaatluste erinevused maakonniti</span>
                           </button>
                           <section id="section4-3" class="collapsible-section">
 
                             <div class="section-content">
 
                               <div id="grid-4-3-1" class="tab-grid">
-                                <div class="grid-item"><iframe src="../media/plots/map_4_3.html" width="100%" height="600" frameborder="0"></iframe></div>
-                                <div class="grid-item"><iframe src="../media/plots/treemap_4_3.html" width="100%" height="600" frameborder="0"></iframe></div>
-                                <div class="grid-item"><iframe src="../media/plots/counts_piirkond.html" width="100%" height="600" frameborder="0"></iframe></div>
+                                <div class="grid-item"><iframe src="../media/plots/map_4_3.html" width="1000" height="600" style="border: none;"></iframe></div>
+                                <div class="grid-item"><iframe src="../media/plots/treemap_4_3.html" width="1000" height="600" style="border: none;"></iframe></div>
+                                <div class="grid-item"><iframe src="../media/plots/counts_piirkond.html" width="1000" height="600" style="border: none;"></iframe></div>
                               </div>
                       
                             </div>
@@ -881,7 +888,7 @@
                         <p>aaaa</p>
                         
                           <button type="button" class="collapsible">
-                            <h3>4.4 Liikide erinevused maakonniti</h3>
+                            <span style="font-size: 20px">4.4 Liikide erinevused maakonniti</span>
                           </button>
 
                           <section id="section4-4" class="collapsible-section">
@@ -890,44 +897,51 @@
                               <!--<div>-->
                                 <div class="tab">
                                   <button data-tab="Tab7" class="tablinks">
-                                    <h4>Üldine</h4>
+                                    <span style="font-size: 18px">Üldine</span>
                                   </button>
                                   <button data-tab="Tab8" class="tablinks">
-                                    <h4>Maakondlik</h4>
+                                    <span style="font-size: 18px">Maakondlik</span>
                                   </button>
                                 </div>
                                 
-                              <div id="Tab7" class="tabcontent"><div id="grid-4-4-1" class="tab-grid">
+                              <div id="Tab7" class="tabcontent">
+                                <div id="grid-4-4-1" class="tab-grid">
                       
-                                <div class="grid-item">
-                                  <h5>Riikide osakaalud</h5>
-                                  <iframe src="../media/plots/riikide_osakaalud.html" width="410" height="400" frameborder="0"></iframe>
-                                </div>
-                                <div class="grid-item">
-                                  <h5>Riikide jaotus taksonoomiliste kategooriate jaotusega</h5>
-                                  <iframe src="../media/plots/taksonoomilised_kategooriad.html" width="100%" height="600" frameborder="0"></iframe>
-                                </div>
-                                <div class="grid-item">
-                                  <h5>Klasside jaotus</h5>
-                                  <iframe src="../media/plots/perekonnad_treemap.html" width="100%" height="600" frameborder="0"></iframe>
-                                </div>
-                                <div class="grid-item">
-                                  <h5>Seltside jaotus</h5>
-                                  <iframe src="../media/plots/perekonnad_icicle.html" width="100%" height="600" frameborder="0"></iframe>
-                                </div>
-                                <div class="grid-item">
-                                  <h5>Sugukondade jaotus</h5>
-                                  <iframe src="../media/plots/perekonnad_sage.html" width="100%" height="600" frameborder="0"></iframe>
+                                  <div class="grid-item">
+                                    <h5>Riikide osakaalud</h5>
+                                    <iframe src="../media/plots/riikide_osakaalud.html" width="410" height="400" style="border: none;"></iframe>
+                                  </div>
+                                  <div class="grid-item">
+                                    <h5>Riikide jaotus taksonoomiliste kategooriate jaotusega</h5>
+                                    <iframe src="../media/plots/taksonoomilised_kategooriad.html" width="1000" height="600" style="border: none;"></iframe>
+                                  </div>
+                                  <div class="grid-item">
+                                    <h5>Klasside jaotus</h5>
+                                    <iframe src="../media/plots/perekonnad_treemap.html" width="1000" height="600" style="border: none;"></iframe>
+                                  </div>
+                                  <div class="grid-item">
+                                    <h5>Seltside jaotus</h5>
+                                    <iframe src="../media/plots/perekonnad_icicle.html" width="1000" height="600" style="border: none;"></iframe>
+                                  </div>
+                                  <div class="grid-item">
+                                    <h5>Sugukondade jaotus</h5>
+                                    <iframe src="../media/plots/perekonnad_sage.html" width="1000" height="600" style="border: none;"></iframe>
+                                  </div>
+                                  <div class="grid-item">
+                                    <h5>Sugukondade jaotus</h5>
+                                    <iframe src="../media/plots/vaatlused_klassid_aastad.html" width="1000" height="600" style="border: none;"></iframe>
+                                  </div>
                                 </div>
                               </div>
 
-                              <!--</div>-->
                               
-                              <div id="Tab8" class="tabcontent"><div id="grid-4-4-2" class="tab-grid">
-                                <div class="grid-item"><iframe src="../media/plots/map_4_4_2.html" width="100%" height="600" frameborder="0"></iframe></div>
-                                <div class="grid-item"><iframe src="../media/plots/map_4_4_3.html" width="100%" height="600" frameborder="0"></iframe></div>
-                              </div>   
-            
+                                 
+                              <div id="Tab8" class="tabcontent">
+                                <div id="grid-4-4-2" class="tab-grid">
+                                  <div class="grid-item"><iframe src="../media/plots/map_4_4_2.html" width="1000" height="600" style="border: none;"></iframe></div>
+                                  <div class="grid-item"><iframe src="../media/plots/map_4_4_3.html" width="1000" height="600" style="border: none;"></iframe></div>
+                                </div>
+                              </div>
 
                             </div>
                             <!--</div>-->
