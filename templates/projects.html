@@ -42,7 +42,6 @@
                 <div class="swiper-slide" data-slide-title="UURIMISKÜSIMUS">
                     
                     <div id="section-1" class="section">
-                      <!--<div class="slide-in-text"><h2>Uurimisküsimus</h2></div>-->
                       <p>Käesoleva töö eesmärgiks oli uurida muutusi loodusvaatluste sisestamises vahemikus 2000-2023.</p>
                       <span>Püstitatud on järgmised algsed hüpoteesid:</span>
                         <ul>
@@ -68,12 +67,10 @@
                 <div class="swiper-slide" data-slide-title="LÄHTEANDMED">
                     
                     <div id="section-2" class="section">
-      
-                      <!--<div class="slide-in-text"><h2>Lähteandmed</h2></div>-->
-                  
+                        
                       <p>Töös on kasutatud kolme põhiandmestikku.</p>
-                      <a href="https://lva.keskkonnainfo.ee"><p>1. Loodusvaatluste andmebaasi</p></a> kõik sisestatud kirjed. Fail on .csv-formaadis.
-              
+                      <p>1. Kõik <a href="https://lva.keskkonnainfo.ee"></a>Loodusvaatluste andmebaasi</a> (.csv) sisestatud kirjed kunia 2023. aasta detsembrini.</p>
+                        <br>
                         <span>Tabelites on järgmised veerud:</span> 
                           <ul>
                               <li><strong>Alg kp</strong>: kujul <em>pp.kk.aaaa</em></li>
@@ -83,10 +80,10 @@
                               <li><strong>Staatus</strong>: kujul <em>kinnitatud/kinnitamata</em></li>
                           </ul>
 
-                      <p><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html"> Maakondade ruumiinfo</a> .shp-formaadis, koordinaatide referentssüsteem EPSG:3301</p>
-                      <p><a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html"> sustusjaotuse ruumiinfo</a>.shp-formaadis, koordinaatide referentssüsteem EPSG:3301</p>
-        
-                      <span>Tabelites on järgmised veerud:</span>
+                      <p>2. <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html"> Maakondade ruumiinfo</a> (.shp, koordinaatide referentssüsteem EPSG:3301)</p>
+                      <p>3. <a href="https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html"> Asustusjaotuse ruumiinfo</a> (.shp, koordinaatide referentssüsteem EPSG:3301)</p>
+                      <br>
+                      <span>Maakondade ja asustusüksuste tabelites on järgmised veerud:</span>
                         <ul>
                             <li><strong>ANIMI</strong>: asustusüksuse nimi</li>
                             <li><strong>AKOOD</strong>: asustusüksuse kood (EHAK)</li>
@@ -733,20 +730,18 @@
                 <div class="swiper-slide" data-slide-title="TULEMUSED">
                     
                     <div class="section">
-                        <!--<h2>Tulemused</h2>-->
                       
                         <p>Järgnevates alajaotistes on joonised. Lõin kaardi, millel on kiht iga ...</p>
                         <button type="button" class="collapsible">
                           <span class="h3-style-span">Baaskaart</span>
                         </button>
                         <section id="section4-0" class="section-content">
-                          <iframe width="100%" height="300" src="media/baaskaart.html" style="border: none;" allowfullscreen></iframe>
+                          <iframe height="300" src="media/baaskaart.html"  allowfullscreen></iframe>
                         </section>
                       
-                        <p>Loodusvaatluste sisestamine on aastate jooksul kasvanud, kuid kasv pole olnud lineaarne.</p>
-                        <p>aaaa</p>
+                        <p>Esimesele uurimisküsimusele vastamiseks võrdlesin vaatluste kasv aastate lõikes. Samuti vaatasin vaatluste jaotus aastate ja maakondade lõikes.</p>
                         <button type="button" class="collapsible">
-                          <span style="font-size: 20px;">4.1 Loodusvaatluste erinevused aastate lõikes</span>
+                          <span class="h3-style-span">4.1 Loodusvaatluste erinevused aastate lõikes</span>
                         </button>
 
                         <section id="section4-1" class="collapsible-section">
@@ -767,6 +762,7 @@
                               <div id="grid-4-1" class="tab-grid">
                           
                                 <div class="grid-item">
+                                  <p>Loodusvaatluste sisestamine on aastate jooksul kasvanud, kuid kasv pole olnud lineaarne.</p>
                                   <p>Sissekanded võib üldistades jagada viieks perioodiks:</p>
                                   <ul class="left-ul">
                                     <li>Esmased sissekanded (2000-2009): Esimene sissekanne oli aastal 2000 ning aastani 2010 oli kokku 10 sissekannet. (1 sissekanne aastatel 2002, 2004 ja 2007; 4 sissekannet aastal 2007; 2 sissekannet aastal 2009). Selle eeldatavaks põhjuseks on TODO vähene livik nign kättesaadavus.</li>
@@ -779,7 +775,7 @@
                                 
                                 <div class="grid-item">
                                   <!--<h5>Vaatluste kasv reaalkasvuga</h5>-->
-                                  <iframe src="../media/plots/vaatluste_kasv.html" width="100%" height="600" style="border: none;"></iframe>
+                                  <iframe src="../media/plots/vaatluste_kasv.html"></iframe>
                                 </div>
                               </div>
                             </div>
@@ -789,15 +785,19 @@
                               <div id="grid-4-1-2" class="tab-grid">
                 
                                 <div class="grid-item">child1</div>
-          
+                                
                                 <div class="grid-item">
-                                  <!--<h5>Vaatluste jaotus maakondade lõikes kokku</h5>-->
-                                  <iframe src="../media/plots/vaatlused_aastate_loikes_maakonnad.html" width="100%" height="600" style="border: none;"></iframe>
+                                  <h5>Vaatluste jaotus maakondade lõikes kokku</h5>
+                                  <iframe src="../media/plots/vaatlused_aastate_loikes_maakonnad.html"></iframe>
+                                </div>
+                                <div class="grid-item">
+                                  <h5>Vaatluste jaotus maakondade lõikes 10 000 inimese kohta</h5>
+                                  <iframe src="../media/plots/vaatlused_aastate_loikes_maakonnad_normaliseeritud.html"></iframe>
                                 </div>
 
                                 <div class="grid-item">
-                                  <!--<h5>vaatluste jaotus aastate ja maakondade lõikes</h5>-->
-                                  <iframe src="../media/plots/map_4_1.html" width="100%" height="600" style="border: none;"></iframe>
+                                  <h5>vaatluste kasv aastate ja maakondade lõikes</h5>
+                                  <iframe src="../media/plots/map_4_3_2.html"></iframe>
                                 </div>
                             
                               </div>
@@ -808,15 +808,14 @@
                         
                         </section>
                       
-                        <p>a</p>
-                        <p>aaaa</p>
+                        <p>Teisele uurimisküsimusele vastamiseks vaatlesin loodusvaatluste sisestamise erinevusi kuu- ja nädalalpäevade ning kuude lõikes. Samuti vaatasin, millistel pühadel vaatlusi sisestati.</p>
                         <button type="button" class="collapsible">
                           <span class="h3-style-span">4.2 Loodusvaatluste erinevused periooditi</span>
                         </button>
                       
                         <section id="section4-2" class="collapsible-section">
                           <div class="section-content">
-                          <div>
+
                             <div class="tab">
                               <button data-tab="Tab3" class="tablinks">
                                 <span class="h4-style-span">Kuu päevad</span>
@@ -825,118 +824,146 @@
                                 <span class="h4-style-span">Nädalapäevad</span>
                               </button>
                               <button data-tab="Tab5" class="tablinks">
-                                <span style="font-size: 18px;">Pühad</span>
+                                <span class="h4-style-span">Kuud</span>
                               </button>
                               <button data-tab="Tab6" class="tablinks">
-                                <span class="h4-style-span">Kuud</span>
+                                <span class="h4-style-span">Pühad</span>
                               </button>
                             </div>
                       
                             <div id="Tab3" class="tabcontent">
                               <p>Kuupäevade lõikes ei tundu ühtegi mustrit ilmnevat. Võib järeldada, et kuu lõikes ei ole vaatlusi mõjutavaid faktoreid.</p>
-                              <iframe src="../media/plots/month_days.html" width="100%" height="600" style="border: none;"></iframe>
+                              <iframe src="../media/plots/month_days.html"></iframe>
                             </div>
                       
                             <div id="Tab4" class="tabcontent">
                               <p>Vaatlusi on rohkem nädala lõpus ning kõige rohkem laupäeval.</p>
-                              <iframe src="../media/plots/nadalapaevad.html" width="100%" height="600" style="border: none;"></iframe>
+                              <iframe src="../media/plots/nadalapaevad.html"></iframe>
                             </div>
                       
                             <div id="Tab5" class="tabcontent">
-                              <p>Loodusvaatlusi on kõige rohkem kevad-suvistel pühadel: suurel reedel (22), võidupüha (15), jaanipäev (10), ülestõusmispüha 1. püha (11), kevadpüha (8), nelipühade 1. püha (3). Mõned vaatlused sisestati ka aasta lõpus (jõulud ja aastavahetus), kuid vähese arvu tõttu pole võimalik üldistusi teha.</p>
-                              <iframe src="../media/plots/puhad_jaotus_kaart_barplotiga.html" width="100%" height="600" style="border: none;"></iframe>
-                            </div>
-                      
-                            <div id="Tab6" class="tabcontent">
                               <p>Vaatlusi sisestatakse kõige rohkem hiliskevadel (aprill, mai) ja suvel (juuni, juuli, august).</p>
-                              <iframe src="../media/plots/nadalapaev_kuu.html" width="100%" height="600" style="border: none;"></iframe>
+                              <iframe src="../media/plots/nadalapaev_kuu.html"></iframe>
                             </div>
-                          </div>
-                          </div></section>
-                      
-                        <p>a</p>
-                        <p>aaaa</p>
-                          <button type="button" class="collapsible">
-                            <span class="h3-style-span">4.3 Loodusvaatluste erinevused maakonniti</span>
-                          </button>
-                          <section id="section4-3" class="collapsible-section">
 
-                            <div class="section-content">
+                            <div id="Tab6" class="tabcontent">
+                              <p>Kokku sisestati pühade ajal 72 vaatlust, mis on ligikaudu 3.34% kõigist vaatlustest. Loodusvaatlusi on kõige rohkem kevad-suvistel pühadel: suurel reedel (22), võidupüha (15), jaanipäev (10), ülestõusmispüha 1. püha (11), kevadpüha (8), nelipühade 1. püha (3). Mõned vaatlused sisestati ka aasta lõpus (jõulud ja aastavahetus), kuid vähese arvu tõttu pole võimalik üldistusi teha.</p>
+                              <p>Pühade ajal sisestaud vaatlused on pärit aastatest 2013, 2022 ja 2023. Üksik vaatlus on sisestaud ka aastatel 2000 (uusaasta), 2016 (kevadpüha) ja 2020 (võidupüha).
 
-                              <div id="grid-4-3-1" class="tab-grid">
-                                <div class="grid-item"><iframe src="../media/plots/map_4_3.html" width="100%" height="600" style="border: none;"></iframe></div>
-                                <div class="grid-item"><iframe src="../media/plots/treemap_4_3.html" width="100%" height="600" style="border: none;"></iframe></div>
-                                <div class="grid-item"><iframe src="../media/plots/counts_piirkond.html" width="100%" height="600" style="border: none;"></iframe></div>
-                              </div>
-                      
-                            </div>
-                          
-                          </section>
-
-                      
-                        <p>a</p>
-                        <p>aaaa</p>
-                        
-                          <button type="button" class="collapsible">
-                            <span class="h3-style-span">4.4 Liikide erinevused maakonniti</span>
-                          </button>
-
-                          <section id="section4-4" class="collapsible-section">
-
-                            <div class="section-content">
-                              <!--<div>-->
-                                <div class="tab">
-                                  <button data-tab="Tab7" class="tablinks">
-                                    <span class="h4-style-span">Üldine</span>
-                                  </button>
-                                  <button data-tab="Tab8" class="tablinks">
-                                    <span class="h4-style-span">Maakondlik</span>
-                                  </button>
-                                </div>
+                                Vaatlusi sisestai pühade ajal kokku kõige rohkem Põhja-Eestis (2023: 22 vaatlust; 2022: 1 vaatlus). 
+                                Kõige rohkematel aastatel sisestati vaatlusi Lääne-Eestis (4 vaatlust aastatel 2023 ja 2022, 12 vaatlust aastal 2013, 1 vaatlus aastal 2016). 
+                                Ainult Lõuna-Eestis (2023: 12 vaatlust; 2022: 2 vaatlust) oli vaatlusi kolmest riigist. Esimene vaatlus sisestati Kesk-Eestis (2023: 7 vaatlust; 2022: 2 vaatlust, 1 vaatlus aastatel 2020 ja 2000). 
+                                Kõige vähem oli vaatlusi Kirde-Eestis (2022: 3 vaatlust).
                                 
-                              <div id="Tab7" class="tabcontent">
-                                <div id="grid-4-4-1" class="tab-grid">
-                      
-                                  <div class="grid-item">
-                                    <h5>Riikide osakaalud</h5>
-                                    <iframe src="../media/plots/riikide_osakaalud.html" width="410" height="400" style="border: none;"></iframe>
-                                  </div>
-                                  <div class="grid-item">
-                                    <h5>Riikide jaotus taksonoomiliste kategooriate jaotusega</h5>
-                                    <iframe src="../media/plots/taksonoomilised_kategooriad.html" width="100%" height="600" style="border: none;"></iframe>
-                                  </div>
-                                  <div class="grid-item">
-                                    <h5>Klasside jaotus</h5>
-                                    <iframe src="../media/plots/perekonnad_treemap.html" width="100%" height="600" style="border: none;"></iframe>
-                                  </div>
-                                  <div class="grid-item">
-                                    <h5>Seltside jaotus</h5>
-                                    <iframe src="../media/plots/perekonnad_icicle.html" width="100%" height="600" style="border: none;"></iframe>
-                                  </div>
-                                  <div class="grid-item">
-                                    <h5>Sugukondade jaotus</h5>
-                                    <iframe src="../media/plots/perekonnad_sage.html" width="100%" height="600" style="border: none;"></iframe>
-                                  </div>
-                                  <div class="grid-item">
-                                    <h5>Sugukondade jaotus</h5>
-                                    <iframe src="../media/plots/vaatlused_klassid_aastad.html" width="100%" height="600" style="border: none;"></iframe>
-                                  </div>
-                                </div>
-                              </div>
-
-                              
-                                 
-                              <div id="Tab8" class="tabcontent">
-                                <div id="grid-4-4-2" class="tab-grid">
-                                  <div class="grid-item"><iframe src="../media/plots/map_4_4_2.html" width="100%" height="600" style="border: none;"></iframe></div>
-                                  <div class="grid-item"><iframe src="../media/plots/map_4_4_3.html" width="100%" height="600" style="border: none;"></iframe></div>
-                                </div>
-                              </div>
-
+                                2023. aastal sisestati vaatlusi samas asukohas mitmel erineval pühal Ketneri külas (1 vaatlus ülestõusmispühade 1. pühal ja nelipühade 1. pühal), Tallinna kesklinnas (4 vatalust ülestõusmispühade 1. pühal ja 1 vaatlus võidupühal) ning Keeri külas (4 vaatlust jaanipäeval ja 2 vaatlust ülestõusmispühade 1. pühal).
+                                
+                                Enamus vaatlustest (ligikaudu 84.7%) olid loomariigi isendid, ülejäänud olid taimed (ligikaudu 8.3%) ja seened (ligikaudu 7%).</p>
+                              <iframe src="../media/plots/puhad_jaotus_kaart_barplotiga.html"></iframe>
                             </div>
-                            <!--</div>-->
-                          </section>
                       
+                            
+                          </div>
+                        </section>
+                      
+                        <p>Kolmandale uurimisküsimusele vastamiseks vaatlesin loodusvatalusi maakondade ja asustusüksuste tüüpide lõikes.</p>
+                        <button type="button" class="collapsible">
+                          <span class="h3-style-span">4.3 Loodusvaatluste erinevused maakonniti</span>
+                        </button>
+                        <section id="section4-3" class="collapsible-section">
+
+                          <div class="section-content">
+
+                            <div id="grid-4-3-1" class="tab-grid">
+                              <div class="grid-item"><iframe src="../media/plots/counts_piirkond.html"></iframe></div>
+                              <div class="grid-item"><iframe src="../media/plots/treemap_4_3.html"></iframe></div>
+                              <div class="grid-item"><iframe src="../media/plots/map_4_3.html"></iframe></div>
+                            </div>
+                    
+                          </div>
+                        
+                        </section>
+
+                      
+                        <p>Neljandale uurimisküsimusele vastamiseks uurisin sagedasi liike, muutusi liikide sisestamises aastate ja maakondade lõikes ning kaitsealuseid liike.</p>
+                        
+                        <button type="button" class="collapsible">
+                          <span class="h3-style-span">4.4 Liikide erinevused maakonniti</span>
+                        </button>
+
+                        <section id="section4-4" class="collapsible-section">
+
+                          <div class="section-content">
+                            <!--<div>-->
+                              <div class="tab">
+                                <button data-tab="Tab7" class="tablinks">
+                                  <span class="h4-style-span">Üldine</span>
+                                </button>
+                                <button data-tab="Tab8" class="tablinks">
+                                  <span class="h4-style-span">Liikide maakondlik jaotus</span>
+                                </button>
+                                <button data-tab="Tab9" class="tablinks">
+                                  <span class="h4-style-span">Kaitsekategooriate maakondlik jaotus</span>
+                                </button>
+                              </div>
+                              
+                            <div id="Tab7" class="tabcontent">
+                              <div id="grid-4-4-1" class="tab-grid">
+                    
+                                <div class="grid-item">
+                                  <h5>Riikide osakaalud</h5>
+                                  <iframe src="../media/plots/riikide_osakaalud.html" width="410" height="400" ></iframe>
+                                </div>
+                                <div class="grid-item">
+                                  <h5>Riikide jaotus taksonoomiliste kategooriate jaotusega</h5>
+                                  <iframe src="../media/plots/taksonoomilised_kategooriad.html"></iframe>
+                                </div>
+                                <div class="grid-item">
+                                  <h5>Klasside jaotus</h5>
+                                  <iframe src="../media/plots/perekonnad_treemap.html"></iframe>
+                                </div>
+                                <div class="grid-item">
+                                  <h5>Seltside jaotus</h5>
+                                  <iframe src="../media/plots/perekonnad_icicle.html"></iframe>
+                                </div>
+                                <div class="grid-item">
+                                  <h5>Sugukondade jaotus</h5>
+                                  <iframe src="../media/plots/perekonnad_sage.html"></iframe>
+                                </div>
+                                <div class="grid-item">
+                                  <h5>Sugukondade jaotus</h5>
+                                  <iframe src="../media/plots/vaatlused_klassid_aastad.html"></iframe>
+                                </div>
+                              </div>
+                            </div>
+
+                            
+                                
+                            <div id="Tab8" class="tabcontent">
+                              <div id="grid-4-4-2" class="tab-grid">
+                                <div class="grid-item">child1</div>
+                                <div class="grid-item"><iframe src="../media/plots/liikide_maakondlik_jaotus_treemap.html"></iframe></div>
+                                <div class="grid-item"><iframe src="../media/plots/map_4_4_2.html"></iframe></div>
+                              </div>
+                            </div>
+
+                            <div id="Tab9" class="tabcontent">
+                              <div id="grid-4-4-3" class="tab-grid">
+                                <div class="grid-item">child1</div>
+                                <div class="grid-item"><iframe src="../media/plots/kk_maakondlik_jaotus_treemap.html"></iframe></div>
+                                <div class="grid-item"><iframe src="../media/plots/map_4_4_3.html"></iframe></div>
+                              </div>
+                            </div>
+
+                          </div>
+                          <!--</div>-->
+                        </section>
+
+                        <section id="section4-5">
+                          <p>Selgus, et vaatlusi sisestatakse rohkem nädalavahetusel, hiliskevadel (aprill, mai) ja suvel (juuni, juuli, august).</p>
+                          <p>Loodusvaatlusi on kõige rohkem kevad-suvistel pühadel (suur reede, võidupüha, jaanipäev, ülestõusmispüha, kevadpüha).</p>
+
+                        </section>
+                    
                       </div>
                     
                     
