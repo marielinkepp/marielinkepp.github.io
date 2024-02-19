@@ -220,7 +220,7 @@ svg circle {
 
 .grid-item {
   margin: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
   position: relative;
   padding:20px;
   display: flex;
@@ -996,6 +996,8 @@ background-color: #f5f5dc;
 grid-row: 1;
 grid-column: 1;
 max-width: 300px;
+align-items: stretch;
+justify-content: stretch;
 }
 
 
@@ -1003,6 +1005,8 @@ max-width: 300px;
 background-color: #dce9f5;
 grid-row:1;
 grid-column: 2;
+align-items: stretch;
+justify-content: stretch;
 }
 
 #grid-4-4-2 > div:nth-child(3), #grid-4-4-3 > div:nth-child(3) {
