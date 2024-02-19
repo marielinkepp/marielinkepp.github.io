@@ -76,7 +76,6 @@ footer {
 
 
 /* parallax */
-
 .parallax {
   background-image: url("media/pawel-czerwinski-hw6Dh3R7yxA-unsplash.jpg");
   min-height: 100vh; 
@@ -110,7 +109,6 @@ footer {
 
 .collapsible::before {
   content: '\02795'; /* Unicode character for "plus" sign (+) */
-  /*font-size: 13px;*/
   color: white;
   float: right;
   margin-left: 5px;
@@ -120,9 +118,7 @@ footer {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
-
   .section {
-    
     background-color: blanchedalmond;
     text-align: left;
     box-sizing: border-box;
@@ -130,10 +126,8 @@ footer {
   }
   
   .content {
-    
     background-color: #f8f9fa;
     margin: 0;
-    /*font-size: 1em;*/
     font-weight: bold;
     text-align: center;
   }
@@ -147,14 +141,6 @@ footer {
     background-color: white;
 
   }
-  
-  
-  
-
-  
-  
-  
-  
   
   
   /* Style the tab */
@@ -376,25 +362,19 @@ td {
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
-  /*width: 120px;*/
   background-color: #555;
   color: #fff;
   text-align: center;
-  /*padding: 5px 0;*/
   border-radius: 6px;
   padding: 10px;
-  /* Fade in tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 0; /* Fade in tooltip, initial opacity 0 */
+  transition: opacity 0.3s; 
   width: 300px;
-  
 }
 
 /* Tooltip arrow */
 .tooltip .tooltiptext::after {
   content: "";
-  /*border-width: 5px;*/
-  /*border-style: solid;*/
   border-color: #555 transparent transparent transparent;
 }
 
@@ -402,13 +382,11 @@ td {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
-  animation: none;
 }
 
-.tooltip.viewed {
-  animation: none;
+.tooltip:hover .tooltiptext, .tooltip.viewed {
+  animation: none; /* The animation stops once the tooltip has been viewed */
 }
-
 
 
 .top {
@@ -416,17 +394,14 @@ td {
   z-index: 1;
   bottom: 100%; /* Place the tooltip above the text */
   left: 50%;
-  /*margin-left: -60px; /* Use half of the width to center the tooltip */
 }
 
 .top::after {
   top: 100%; /* Below the tooltip */
   left: 50%;
-  /*margin-left: -5px;*/
 }
 
 .right {
-  /* Position the tooltip text */
   z-index: 1;
   top: 0; /* Align with the middle of the element */
   left: 100%; /* Place the tooltip to the right of the element */
@@ -436,7 +411,6 @@ td {
 .right::after {
   top: 0; /* Align with the middle of the tooltip */
   left: 100%; /* Place the arrow on the left side of the tooltip */
-  /*margin-top: -5px; /* Use half of the height to center the arrow */
   margin-left: 20px;
 }
 
@@ -451,7 +425,6 @@ td {
 .left::after {
   top: 0; /* Align with the middle of the tooltip */
   right: 0; /* Place the arrow on the left side of the tooltip */
-  /*margin-top: -5px; /* Use half of the height to center the arrow */
 }
 
 .top, .top::after, .right, .right::after, .left, .left::after  {
@@ -900,8 +873,8 @@ right: 0;
 }
 
 .tab-grid > .grid-item{
-  height: auto;
-  width: auto;
+  height: auto !important;
+  width: auto !important;
 }
 
 #grid-4-1 > div:nth-child(1), #grid-4-3-1 > div:nth-child(1), #grid-4-4-1 > div:nth-child(1) {
@@ -946,12 +919,6 @@ grid-column: 1;
 #grid-4-4-1 > div:nth-child(5) {
 grid-row: 3;
 grid-column: 2;
-}
-
-#grid-4-4-1 > div:nth-child(2), #grid-4-4-1 > div:nth-child(5) {
-  align-items: stretch;
-  justify-content: stretch;
-  max-width: 1000px;
 }
 
 #grid-4-1-2 > div:nth-child(4), #grid-4-4-2 > div:nth-child(3), #grid-4-4-3 > div:nth-child(3) {
