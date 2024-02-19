@@ -488,10 +488,8 @@ td {
 }
 
 /* CUSTOM BUTTON BY JOE BOCOCK VIA CSS SCAN */
-
 .button-52 {
   font-size: 30px;
-  /*font-weight: 200;*/
   letter-spacing: 1px;
   padding: 10px;/*13px 20px 13px;*/
   margin: 20px;
@@ -532,9 +530,10 @@ td {
   }
 }
 
-/* Hide all td elements by default */
+/* TABLE STYLES */
+
 td {
-  display: none;
+  display: none; /* Hide all td elements by default */
 }
 
 .special-open {
@@ -554,66 +553,71 @@ td {
   }
 }
 
-/*svg {
-  position: absolute;
-  z-index: 1000;
-}*/
 
-
-/* author: kent Chang begins */
+/* INTERACTIVE TIMELINE BY KENT CHANG FROM CODEPEN */
 .interactive-timeline-wrap {
   margin: 0 auto;
-  font-size: 12px; }
+  font-size: 12px; 
+}
 
 .pres-timeline {
   font-family: roboto, helvetica, sans-serif;
   font-size: 12px;
   color: #4A4A4A;
   width: 100%;
-  margin: 30px 0; }
-  .pres-timeline > div > div {
-    padding: 1em 0;
-    box-sizing: border-box; }
+  margin: 30px 0; 
+}
+.pres-timeline > div > div {
+  padding: 1em 0;
+  box-sizing: border-box; 
+}
   
-    .pres-timeline .periods-container, .pres-timeline .cards-container {
-    overflow: hidden;
-    box-sizing: border-box;
-    min-height: 100px;
-    transition: height .5s ease-in-out;
-    /*background-color: #FFF;*/ }
+.pres-timeline .periods-container, .pres-timeline .cards-container {
+overflow: hidden;
+box-sizing: border-box;
+min-height: 100px;
+transition: height .5s ease-in-out;
+}
 
 .periods-container:before {
   background-image: linear-gradient(left, #FFF, rgba(248, 248, 248, 0));
   left: 0;
-  content: '';
-  z-index: 2;
-  top: 0;
-  width: 100px; }
+}
 
 .periods-container:after {
   background-image: linear-gradient(right, #FFF, rgba(248, 248, 248, 0));
   right: 0;
+}
+
+.periods-container:before, .periods-container:after {
   content: '';
   z-index: 2;
   top: 0;
-  width: 100px; }
+  width: 100px; 
+}
 
 .periods-container .btn-back, .periods-container .btn-next {
   display: inline-block;
   width: 15%;
   cursor: pointer;
   z-index: 10;
-  transition: 0.3s ease-in-out; }
-  .periods-container .btn-back:hover, .periods-container .btn-next:hover {
-    background-color: rgba(0, 0, 0, 0.05); }
-  .periods-container .btn-back.hide, .periods-container .btn-next.hide {
-    display: none; }
+  transition: 0.3s ease-in-out; 
+}
+
+.periods-container .btn-back:hover, .periods-container .btn-next:hover {
+  background-color: rgba(0, 0, 0, 0.05); 
+}
+.periods-container .btn-back.hide, .periods-container .btn-next.hide {
+  display: none; 
+}
 
 .periods-container .btn-back {
-  left: 0; }
+left: 0; 
+}
 
 .periods-container .btn-next {
-  right: 0; }
+right: 0; 
+}
 
 .periods-container section {
   width: 70%;
@@ -625,7 +629,8 @@ td {
   transition: transform .3s ease-in-out, opacity .2s ease, height .3s ease;
   bottom: 0;
   opacity: 0;
-  background-color: #cde1ff; }
+  background-color: #cde1ff; 
+}
 
   .periods-container section.active {
     opacity: 1;
@@ -804,10 +809,6 @@ td {
   .cards-container section img {
     width: 100%; }
 
-
-/* colors */
-
-
 /* author: kent Chang ends */
 
 
@@ -891,15 +892,14 @@ td {
 
 .tab-grid {
   display: grid;
-grid-template-columns: auto auto;
-grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
 }
 
 .tab-grid > .grid-item{
   height: auto;
   width: auto;
 }
-
 
 #grid-4-1 > div:nth-child(1), #grid-4-3-1 > div:nth-child(1), #grid-4-4-1 > div:nth-child(1) {
 grid-row: 1;
@@ -922,7 +922,6 @@ grid-column: 2;
 }
 
 #grid-4-1-2 > div:nth-child(3) {
-  background-color: #dce9f5;
   grid-row:2;
   grid-column: 2;
 }
@@ -941,6 +940,8 @@ max-width: 500px;
 #grid-4-4-1 > div:nth-child(5) {
 grid-row: 3;
 grid-column: 2;
+align-items: flex-end;
+width: 700px;
 }
 
 #grid-4-1-2 > div:nth-child(4), #grid-4-4-2 > div:nth-child(3), #grid-4-4-3 > div:nth-child(3) {
@@ -953,7 +954,7 @@ grid-column: 2;
   background-color: #f5f5dc;
 }
 
-#grid-4-1 > div:nth-child(2), #grid-4-3-1 > div:nth-child(2), #grid-4-4-1 > div:nth-child(2), #section-4-2 > div > div:nth-child(2), #section-4-2 > div > div:nth-child(4), #grid-4-4-2 > div:nth-child(2), #grid-4-4-3 > div:nth-child(2), #grid-4-4-1 > div:nth-child(5) {
+#grid-4-1 > div:nth-child(2), #grid-4-3-1 > div:nth-child(2), #grid-4-4-1 > div:nth-child(2), #section-4-2 > div > div:nth-child(2), #section-4-2 > div > div:nth-child(4), #grid-4-4-2 > div:nth-child(2), #grid-4-4-3 > div:nth-child(2), #grid-4-4-1 > div:nth-child(5), #grid-4-1-2 > div:nth-child(3) {
   background-color: #dce9f5;
 }
 
