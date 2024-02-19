@@ -1,5 +1,11 @@
+/* padding */
+
 * {
   padding: auto;
+}
+
+.section, .content, .collapsible-section, .grid-item, .grid-container, .swiper-container, #swiper-nav-wrapper  {
+  padding: 20px;
 }
 
 header {
@@ -111,8 +117,9 @@ footer {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
+
   .section {
-    padding: 20px;
+    
     background-color: blanchedalmond;
     text-align: left;
     box-sizing: border-box;
@@ -120,7 +127,7 @@ footer {
   }
   
   .content {
-    padding: 20px;
+    
     background-color: #f8f9fa;
     margin: 0;
     /*font-size: 1em;*/
@@ -131,7 +138,6 @@ footer {
   .collapsible-section{
     display: none; /* sections are hidden by default*/
     background-color: white;
-    padding:20px;
   }
   
   .collapsible-section::active {
@@ -140,13 +146,8 @@ footer {
   }
   
   
- 
-  .grid-item {
-    padding: 20px;
-    text-align: left;
-    /*grid-gap: 20px; /* This adds a 20px gap between grid items */
-    flex-direction: column;
-  }
+  
+
   
   
   
@@ -214,7 +215,6 @@ svg circle {
   display:grid;
   grid-template-columns: auto auto auto auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto;
-  padding: 20px;
   overflow:scroll;
 }
 
@@ -222,12 +222,13 @@ svg circle {
   margin: 0;
   box-sizing: border-box;
   position: relative;
-  padding:20px;
   display: flex;
   justify-content: center;
   align-items: center;
   width:fit-content;
   height:fit-content;
+  text-align: left;
+  flex-direction: column;
 }
 
 .grid-item.hidden {
@@ -884,9 +885,6 @@ right: 0;
   display:flex;
 }
 
-.swiper-container, #swiper-nav-wrapper {
-  padding:20px;
-}
 
 #swiper-nav-grid {
   padding:4.5px;
@@ -945,8 +943,8 @@ max-width: 500px;
 #grid-4-4-1 > div:nth-child(5) {
 grid-row: 3;
 grid-column: 2;
-align-items: center;
-width: 700px;
+align-items: stretch;
+justify-content: stretch;
 }
 
 #grid-4-1-2 > div:nth-child(4), #grid-4-4-2 > div:nth-child(3), #grid-4-4-3 > div:nth-child(3) {
