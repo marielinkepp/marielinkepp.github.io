@@ -144,7 +144,7 @@ footer {
   .grid-item {
     padding: 20px;
     text-align: left;
-    grid-gap: 20px; /* This adds a 20px gap between grid items */
+    /*grid-gap: 20px; /* This adds a 20px gap between grid items */
     flex-direction: column;
   }
   
@@ -973,7 +973,7 @@ grid-column: 2;
 }
 
 #grid-4-4-1 > div:nth-child(3) {
-background-color: #dce9f5;
+background-color: #f5dcdd;
 grid-row:2;
 grid-column: span 2;
 }
@@ -995,6 +995,7 @@ grid-column: 2;
 background-color: #f5f5dc;
 grid-row: 1;
 grid-column: 1;
+max-width: 300px;
 }
 
 
@@ -1010,9 +1011,26 @@ grid-row:2;
 grid-column: span 2;
 }
 
+#section-4-2 > div > div:nth-child(1) {
+  background-color: #f5f5dc;
+}
+
+#section-4-2 > div > div:nth-child(2) {
+  background-color: #dce9f5;
+}
+
+#section-4-2 > div > div:nth-child(3) {
+  background-color: #f5f5dc;
+}
+
+#section-4-2 > div > div:nth-child(4) {
+  background-color: #dce9f5;
+}
+
 .grid-item > h5 {
-  align-self: flex-start;
+  align-self: center;
   position: absolute;
+  top: 0px;
 }
 
 .h3-style-span {
